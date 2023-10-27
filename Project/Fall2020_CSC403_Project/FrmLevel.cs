@@ -124,10 +124,7 @@ namespace Fall2020_CSC403_Project {
         frmBattle = FrmBattle.GetInstance(enemy);
         frmBattle.Show();
 
-        if (enemy == bossHersheys)
-        {
-            frmBattle.SetupForBossBattle();
-        }
+       
     }
 
         private Bitmap BlurImage(Bitmap image)
