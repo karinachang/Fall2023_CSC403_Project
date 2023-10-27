@@ -300,8 +300,8 @@
             this.picBossHersheys.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_hersheys;
             this.picBossHersheys.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picBossHersheys.Location = new System.Drawing.Point(1245, 109);
-            this.picBossHersheys    .Margin = new System.Windows.Forms.Padding(4);
-            this.picBossHersheys.Name = "pictureBox1";
+            this.picBossHersheys.Margin = new System.Windows.Forms.Padding(4);
+            this.picBossHersheys.Name = "picBossHersheys";
             this.picBossHersheys.Size = new System.Drawing.Size(213, 318);
             this.picBossHersheys.TabIndex = 19;
             this.picBossHersheys.TabStop = false;
@@ -313,8 +313,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(160)))), ((int)(((byte)(82)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1493, 880);
-            this.Controls.Add(this.picBossHersheys);
-            this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
@@ -328,10 +326,12 @@
             this.Controls.Add(this.picWall12);
             this.Controls.Add(this.picWall4);
             this.Controls.Add(this.picWall5);
-            this.Controls.Add(this.picEnemyKitkat);
-            this.Controls.Add(this.picEnemyReeses);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picEnemyDead);
+            this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.picEnemyReeses);
+            this.Controls.Add(this.picEnemyKitkat);
+            this.Controls.Add(this.picBossHersheys);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLevel";
