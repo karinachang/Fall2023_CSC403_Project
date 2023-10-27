@@ -113,6 +113,10 @@ namespace Fall2020_CSC403_Project {
             }
         }
 
+        private void enemyEaten()
+        {
+            //Enemy eaten notification
+        }
         private void restoreHealth()
         {
             int a = player.Health;
@@ -123,6 +127,7 @@ namespace Fall2020_CSC403_Project {
         private void defeatEnemy()
         {
             restoreHealth();
+            enemyEaten();
         }
         private void defeatPlayer()
         {
