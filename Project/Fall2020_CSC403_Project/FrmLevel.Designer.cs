@@ -107,10 +107,10 @@
             this.picWall11.BackColor = System.Drawing.Color.Transparent;
             this.picWall11.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall11.Location = new System.Drawing.Point(734, 523);
+            this.picWall11.Location = new System.Drawing.Point(734, 214);
             this.picWall11.Margin = new System.Windows.Forms.Padding(4);
             this.picWall11.Name = "picWall11";
-            this.picWall11.Size = new System.Drawing.Size(218, 285);
+            this.picWall11.Size = new System.Drawing.Size(83, 595);
             this.picWall11.TabIndex = 17;
             this.picWall11.TabStop = false;
             // 
@@ -182,7 +182,7 @@
             this.picWall10.Location = new System.Drawing.Point(971, 82);
             this.picWall10.Margin = new System.Windows.Forms.Padding(4);
             this.picWall10.Name = "picWall10";
-            this.picWall10.Size = new System.Drawing.Size(108, 226);
+            this.picWall10.Size = new System.Drawing.Size(108, 546);
             this.picWall10.TabIndex = 11;
             this.picWall10.TabStop = false;
             // 
@@ -194,7 +194,7 @@
             this.picWall9.Location = new System.Drawing.Point(336, 214);
             this.picWall9.Margin = new System.Windows.Forms.Padding(4);
             this.picWall9.Name = "picWall9";
-            this.picWall9.Size = new System.Drawing.Size(262, 119);
+            this.picWall9.Size = new System.Drawing.Size(400, 119);
             this.picWall9.TabIndex = 10;
             this.picWall9.TabStop = false;
             // 
@@ -251,7 +251,7 @@
             this.picEnemyKitkat.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyKitkat.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat;
             this.picEnemyKitkat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picEnemyKitkat.Location = new System.Drawing.Point(1001, 346);
+            this.picEnemyKitkat.Location = new System.Drawing.Point(819, 286);
             this.picEnemyKitkat.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyKitkat.Name = "picEnemyKitkat";
             this.picEnemyKitkat.Size = new System.Drawing.Size(135, 132);
@@ -264,7 +264,7 @@
             this.picEnemyReeses.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
             this.picEnemyReeses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyReeses.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
-            this.picEnemyReeses.Location = new System.Drawing.Point(547, 457);
+            this.picEnemyReeses.Location = new System.Drawing.Point(358, 456);
             this.picEnemyReeses.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses.Name = "picEnemyReeses";
             this.picEnemyReeses.Size = new System.Drawing.Size(163, 118);
@@ -279,7 +279,7 @@
             this.picWall3.Location = new System.Drawing.Point(2, 477);
             this.picWall3.Margin = new System.Windows.Forms.Padding(4);
             this.picWall3.Name = "picWall3";
-            this.picWall3.Size = new System.Drawing.Size(478, 83);
+            this.picWall3.Size = new System.Drawing.Size(294, 83);
             this.picWall3.TabIndex = 3;
             this.picWall3.TabStop = false;
             // 
