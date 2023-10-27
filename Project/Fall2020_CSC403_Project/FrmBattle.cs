@@ -124,15 +124,72 @@ namespace Fall2020_CSC403_Project {
             player.AlterHealth(healthToAdd);
         }
 
+        // Add this method to your FrmBattle class
+        private void AddWinOrLossControls(string message, Color backgroundColor, EventHandler btnClickHandler)
+        {
+            // Create a panel to darken the background
+            Panel darkPanel = new Panel();
+            darkPanel.Size = this.ClientSize;
+            darkPanel.Location = Point.Empty;
+            darkPanel.BackColor = Color.FromArgb(128, 0, 0, 0);  // Semi-transparent
+            this.Controls.Add(darkPanel);
+            darkPanel.BringToFront();
+
+            // Create a label to show the message
+            Label lblMessage = new Label();
+            lblMessage.Text = message;
+            lblMessage.Size = new Size(300, 50);
+            lblMessage.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25); // Centered
+            lblMessage.Font = new Font("Arial", 12, FontStyle.Bold);
+            lblMessage.ForeColor = Color.White;
+            lblMessage.BackColor = backgroundColor;
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(lblMessage);
+            lblMessage.BringToFront();
+
+            // Create a button to proceed
+            Button btnProceed = new Button();
+            btnProceed.Text = "Proceed";
+            btnProceed.Size = new Size(100, 50);
+            btnProceed.Location = new Point(this.Width / 2 - 50, this.Height / 2 + 50); // Below the label
+            btnProceed.Click += btnClickHandler; // Attach click event handler
+            this.Controls.Add(btnProceed);
+            btnProceed.BringToFront();
+        }
+
+
+        // Add this method to your FrmBattle class
+        private void btnProceedForWin_Click(object sender, EventArgs e)
+        {
+            // Code to proceed after winning
+            this.Close();
+        }
+
+        // Add this method to your FrmBattle class
+        private void btnProceedForLoss_Click(object sender, EventArgs e)
+        {
+            // Code to proceed after losing
+            Application.Exit();
+        }
+
+        // defeatEnemy method
         private void defeatEnemy()
         {
+            AddWinOrLossControls("Congrats! You defeated the opponent.", Color.Green, new EventHandler(btnProceedForWin_Click));
             restoreHealth();
             enemyEaten();
+            instance = null;
+            // Close();  // <-- Comment this out
         }
+
         private void defeatPlayer()
         {
-            //Iftesam
+            AddWinOrLossControls("Mr. Peanut died. You suck!", Color.Red, new EventHandler(btnProceedForLoss_Click));
+            instance = null;
+            // Close();  // <-- Comment this out
         }
+
+
 
         private void btnAttack_Click(object sender, EventArgs e) {
       player.OnAttack(playerHitAmount()); //range -3, -4, -5
@@ -144,12 +201,12 @@ namespace Fall2020_CSC403_Project {
       if (player.Health <= 0) {
         defeatPlayer();
         instance = null;
-        Close();
+        //Close();
       }
       else if(enemy.Health <= 0){
             defeatEnemy();
             instance = null;
-            Close();
+            //Close();
         }
     }
 
