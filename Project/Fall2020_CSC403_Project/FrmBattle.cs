@@ -124,7 +124,6 @@ namespace Fall2020_CSC403_Project {
             player.AlterHealth(healthToAdd);
         }
 
-        // Add this method to your FrmBattle class
         private void AddWinOrLossControls(string message, Color backgroundColor, EventHandler btnClickHandler)
         {
             // Create a panel to darken the background
@@ -158,14 +157,12 @@ namespace Fall2020_CSC403_Project {
         }
 
 
-        // Add this method to your FrmBattle class
         private void btnProceedForWin_Click(object sender, EventArgs e)
         {
             // Code to proceed after winning
             this.Close();
         }
 
-        // Add this method to your FrmBattle class
         private void btnProceedForLoss_Click(object sender, EventArgs e)
         {
             // Code to proceed after losing
@@ -179,14 +176,14 @@ namespace Fall2020_CSC403_Project {
             restoreHealth();
             enemyEaten();
             instance = null;
-            // Close();  // <-- Comment this out
+            // Close();
         }
 
         private void defeatPlayer()
         {
             AddWinOrLossControls("Mr. Peanut died. You suck!", Color.Red, new EventHandler(btnProceedForLoss_Click));
             instance = null;
-            // Close();  // <-- Comment this out
+            // Close();
         }
 
 
