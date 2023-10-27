@@ -29,6 +29,7 @@ namespace Fall2020_CSC403_Project {
       bossHersheys = new Enemy(CreatePosition(picBossHersheys), CreateCollider(picBossHersheys, PADDING));
       enemyReeses = new Enemy(CreatePosition(picEnemyReeses), CreateCollider(picEnemyReeses, PADDING));
       enemyKitkat = new Enemy(CreatePosition(picEnemyKitkat), CreateCollider(picEnemyKitkat, PADDING));
+      
 
       bossHersheys.Img = picBossHersheys.BackgroundImage;
       enemyReeses.Img = picEnemyReeses.BackgroundImage;
@@ -84,14 +85,17 @@ namespace Fall2020_CSC403_Project {
       }
 
       // check collision with enemies
-      if (HitAChar(player, enemyReeses)) {
+      if (HitAChar(player, enemyReeses) && enemyReeses.Health > 0) {
         Fight(enemyReeses);
+        picEnemyReeses.BackgroundImage = picEnemyDead.BackgroundImage;
       }
-      else if (HitAChar(player, enemyKitkat)) {
+      else if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
         Fight(enemyKitkat);
+        picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
       }
-      if (HitAChar(player, bossHersheys)) {
+      if (HitAChar(player, bossHersheys) && bossHersheys.Health > 0) {
         Fight(bossHersheys);
+        picBossHersheys.BackgroundImage = picEnemyDead.BackgroundImage;
       }
 
       // update player's picture box

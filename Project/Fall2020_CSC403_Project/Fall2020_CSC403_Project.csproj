@@ -134,5 +134,8 @@
   <ItemGroup>
     <None Include="bin\Debug\theme.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_dead.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

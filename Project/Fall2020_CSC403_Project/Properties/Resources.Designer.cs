@@ -73,9 +73,9 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap enemy_kitkat {
+        internal static System.Drawing.Bitmap enemy_dead {
             get {
-                object obj = ResourceManager.GetObject("enemy_kitkat", resourceCulture);
+                object obj = ResourceManager.GetObject("enemy_dead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +86,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap enemy_hersheys {
             get {
                 object obj = ResourceManager.GetObject("enemy_hersheys", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enemy_kitkat {
+            get {
+                object obj = ResourceManager.GetObject("enemy_kitkat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
