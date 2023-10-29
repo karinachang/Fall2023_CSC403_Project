@@ -4,6 +4,7 @@ using Fall2020_CSC403_Project.Properties;
 using System;
 using System.ComponentModel.Design.Serialization;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Media;
 using System.Windows.Forms;
 
@@ -58,9 +59,7 @@ namespace Fall2020_CSC403_Project {
         private int playerHitAmount()
         {
             Random rand = new Random();
-
-            uint num = (uint)rand.Next();
-            uint hit = num % 3;
+            uint hit = (uint)rand.Next(0,3);
 
             if(hit == 0)
             {
@@ -82,9 +81,7 @@ namespace Fall2020_CSC403_Project {
         private int enemyHitAmount()
         {
             Random rand = new Random();
-
-            uint num = (uint)rand.Next();
-            uint hit = num % 3;
+            uint hit = (uint)rand.Next(0,3);
 
             if (hit == 0)
             {
@@ -107,11 +104,23 @@ namespace Fall2020_CSC403_Project {
         private void enemyEaten()
         {
             //Enemy eaten notification
+            Label enemyEaten = new Label();
+            Label test = new Label();
+            enemyEaten.Text = "You have eaten the enemy and regained health";
+            enemyEaten.TextAlign = ContentAlignment.TopCenter;
+            enemyEaten.Size = new Size(300, 50);
+            enemyEaten.Font = new Font("BloodyTerror", 15, FontStyle.Bold);
+            enemyEaten.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 150);
+            enemyEaten.ForeColor = Color.Black;
+            enemyEaten.Name = "eatEnemy";
+            this.Controls.Add(enemyEaten);
+            enemyEaten.BringToFront();
+
         }
         private void restoreHealth()
         {
-            int a = player.Health;
-            int healthToAdd = 20 - a;
+            int currentHealth = player.Health;
+            int healthToAdd = 20 - currentHealth;
             player.AlterHealth(healthToAdd);
         }
 
