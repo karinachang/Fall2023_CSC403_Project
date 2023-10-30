@@ -27,7 +27,6 @@
             this.lblInGameTime = new System.Windows.Forms.Label();
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
-            this.picEnemyDead = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall8 = new System.Windows.Forms.PictureBox();
@@ -40,12 +39,12 @@
             this.picWall12 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.picWall5 = new System.Windows.Forms.PictureBox();
-            this.picEnemyKitkat = new System.Windows.Forms.PictureBox();
-            this.picEnemyReeses = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
+            this.picEnemyDead = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.picEnemyReeses = new System.Windows.Forms.PictureBox();
+            this.picEnemyKitkat = new System.Windows.Forms.PictureBox();
             this.picBossHersheys = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyDead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
@@ -58,10 +57,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyDead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossHersheys)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,18 +89,6 @@
             this.tmrPlayerMove.Enabled = true;
             this.tmrPlayerMove.Interval = 10;
             this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
-            // 
-            // picEnemyDead
-            // 
-            this.picEnemyDead.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyDead.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_dead;
-            this.picEnemyDead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picEnemyDead.Location = new System.Drawing.Point(2, 161);
-            this.picEnemyDead.Margin = new System.Windows.Forms.Padding(4);
-            this.picEnemyDead.Name = "picEnemyDead";
-            this.picEnemyDead.Size = new System.Drawing.Size(84, 118);
-            this.picEnemyDead.TabIndex = 18;
-            this.picEnemyDead.TabStop = false;
             // 
             // picWall11
             // 
@@ -246,17 +234,41 @@
             this.picWall5.TabIndex = 6;
             this.picWall5.TabStop = false;
             // 
-            // picEnemyKitkat
+            // picWall3
             // 
-            this.picEnemyKitkat.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyKitkat.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat;
-            this.picEnemyKitkat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picEnemyKitkat.Location = new System.Drawing.Point(819, 286);
-            this.picEnemyKitkat.Margin = new System.Windows.Forms.Padding(4);
-            this.picEnemyKitkat.Name = "picEnemyKitkat";
-            this.picEnemyKitkat.Size = new System.Drawing.Size(135, 132);
-            this.picEnemyKitkat.TabIndex = 5;
-            this.picEnemyKitkat.TabStop = false;
+            this.picWall3.BackColor = System.Drawing.Color.Transparent;
+            this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
+            this.picWall3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picWall3.Location = new System.Drawing.Point(2, 477);
+            this.picWall3.Margin = new System.Windows.Forms.Padding(4);
+            this.picWall3.Name = "picWall3";
+            this.picWall3.Size = new System.Drawing.Size(294, 83);
+            this.picWall3.TabIndex = 3;
+            this.picWall3.TabStop = false;
+            // 
+            // picEnemyDead
+            // 
+            this.picEnemyDead.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemyDead.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_dead;
+            this.picEnemyDead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picEnemyDead.Location = new System.Drawing.Point(2, 161);
+            this.picEnemyDead.Margin = new System.Windows.Forms.Padding(4);
+            this.picEnemyDead.Name = "picEnemyDead";
+            this.picEnemyDead.Size = new System.Drawing.Size(84, 118);
+            this.picEnemyDead.TabIndex = 18;
+            this.picEnemyDead.TabStop = false;
+            // 
+            // picPlayer
+            // 
+            this.picPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
+            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPlayer.Location = new System.Drawing.Point(158, 628);
+            this.picPlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayer.Name = "picPlayer";
+            this.picPlayer.Size = new System.Drawing.Size(72, 131);
+            this.picPlayer.TabIndex = 0;
+            this.picPlayer.TabStop = false;
             // 
             // picEnemyReeses
             // 
@@ -271,39 +283,27 @@
             this.picEnemyReeses.TabIndex = 4;
             this.picEnemyReeses.TabStop = false;
             // 
-            // picWall3
+            // picEnemyKitkat
             // 
-            this.picWall3.BackColor = System.Drawing.Color.Transparent;
-            this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-            this.picWall3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall3.Location = new System.Drawing.Point(2, 477);
-            this.picWall3.Margin = new System.Windows.Forms.Padding(4);
-            this.picWall3.Name = "picWall3";
-            this.picWall3.Size = new System.Drawing.Size(294, 83);
-            this.picWall3.TabIndex = 3;
-            this.picWall3.TabStop = false;
-            // 
-            // picPlayer
-            // 
-            this.picPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
-            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayer.Location = new System.Drawing.Point(158, 628);
-            this.picPlayer.Margin = new System.Windows.Forms.Padding(4);
-            this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(72, 131);
-            this.picPlayer.TabIndex = 0;
-            this.picPlayer.TabStop = false;
+            this.picEnemyKitkat.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemyKitkat.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat;
+            this.picEnemyKitkat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEnemyKitkat.Location = new System.Drawing.Point(795, 289);
+            this.picEnemyKitkat.Margin = new System.Windows.Forms.Padding(4);
+            this.picEnemyKitkat.Name = "picEnemyKitkat";
+            this.picEnemyKitkat.Size = new System.Drawing.Size(159, 158);
+            this.picEnemyKitkat.TabIndex = 5;
+            this.picEnemyKitkat.TabStop = false;
             // 
             // picBossHersheys
             // 
             this.picBossHersheys.BackColor = System.Drawing.Color.Transparent;
             this.picBossHersheys.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_hersheys;
-            this.picBossHersheys.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picBossHersheys.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBossHersheys.Location = new System.Drawing.Point(1245, 109);
             this.picBossHersheys.Margin = new System.Windows.Forms.Padding(4);
             this.picBossHersheys.Name = "picBossHersheys";
-            this.picBossHersheys.Size = new System.Drawing.Size(213, 318);
+            this.picBossHersheys.Size = new System.Drawing.Size(213, 322);
             this.picBossHersheys.TabIndex = 19;
             this.picBossHersheys.TabStop = false;
             // 
@@ -341,7 +341,6 @@
             this.Load += new System.EventHandler(this.FrmLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyDead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).EndInit();
@@ -354,10 +353,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyDead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossHersheys)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
