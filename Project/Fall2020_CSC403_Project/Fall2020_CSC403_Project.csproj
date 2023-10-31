@@ -82,6 +82,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="data\Bloody terror TTF.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\enemy_dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\EatEnemyNotification.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

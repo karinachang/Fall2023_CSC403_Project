@@ -386,7 +386,7 @@
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
     private System.Windows.Forms.PictureBox picEnemyDead;
-        private System.Windows.Forms.PictureBox picBossHersheys;
+    private System.Windows.Forms.PictureBox picBossHersheys; 
     }
 }
 

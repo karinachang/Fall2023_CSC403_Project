@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Media;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmBattle : Form {
@@ -34,9 +35,19 @@ namespace Fall2020_CSC403_Project {
       UpdateHealthBars();
     }
 
+     public static PrivateFontCollection addBloodyFont()
+        {
+         //Add bloody font to private font collection
+         PrivateFontCollection pfc = new PrivateFontCollection();
+         int fontLength = Properties.Resources.Bloody_terror_TTF.Length;
+         byte[] fontdata = Properties.Resources.Bloody_terror_TTF;
+         System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
+         Marshal.Copy(fontdata, 0, data, fontLength);
+         pfc.AddMemoryFont(data, fontLength);
+         return pfc;
+        }
 
-
-    public static FrmBattle GetInstance(Enemy enemy) {
+        public static FrmBattle GetInstance(Enemy enemy) {
       if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;
@@ -106,12 +117,14 @@ namespace Fall2020_CSC403_Project {
             //Enemy eaten notification
             Label enemyEaten = new Label();
             Label test = new Label();
-            enemyEaten.Text = "You have eaten the enemy and regained health";
+            PrivateFontCollection pfc = addBloodyFont();
             enemyEaten.TextAlign = ContentAlignment.TopCenter;
-            enemyEaten.Size = new Size(300, 50);
-            enemyEaten.Font = new Font("BloodyTerror", 15, FontStyle.Bold);
+            enemyEaten.Size = new Size(300, 100);
+            enemyEaten.Font = new Font(pfc.Families[0], 15);
+            enemyEaten.Text = "You have eaten the enemy and regained health";
             enemyEaten.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 150);
-            enemyEaten.ForeColor = Color.Black;
+            enemyEaten.BackColor = Color.Black;
+            enemyEaten.ForeColor = Color.Red;
             enemyEaten.Name = "eatEnemy";
             this.Controls.Add(enemyEaten);
             enemyEaten.BringToFront();
