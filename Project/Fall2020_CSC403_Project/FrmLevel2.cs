@@ -5,7 +5,7 @@ using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
-	public partial class FrmLevel : Form {
+	public partial class FrmLevel2 : Form {
 		private Player player;
 		private bool isPaused = false;
 		private Enemy enemyReeses;
@@ -17,11 +17,11 @@ namespace Fall2020_CSC403_Project {
 		private DateTime pauseBegin;
 		private FrmBattle frmBattle;
 
-		public FrmLevel() {
+		public FrmLevel2() {
 			InitializeComponent();
 		}
 
-		private void FrmLevel_Load(object sender, EventArgs e) {
+		private void FrmLevel2_Load(object sender, EventArgs e) {
 			const int PADDING = 7;
 			const int NUM_WALLS = 13;
 
@@ -61,7 +61,7 @@ namespace Fall2020_CSC403_Project {
 			return new Collider(rect);
 		}
 
-		private void FrmLevel_KeyUp(object sender, KeyEventArgs e) {
+		private void FrmLevel2_KeyUp(object sender, KeyEventArgs e) {
 			player.ResetMoveSpeed();
 		}
 
@@ -249,7 +249,7 @@ namespace Fall2020_CSC403_Project {
 			return base.ProcessCmdKey(ref msg, keyData);
 		}
 
-		private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+		private void FrmLevel2_KeyDown(object sender, KeyEventArgs e) {
 			if (isPaused && e.KeyCode != Keys.Escape)
 				return; // If the game is paused, ignore other keys
 

@@ -9,234 +9,227 @@ using System.Media;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Fall2020_CSC403_Project {
-  public partial class FrmBattle : Form {
-    public static FrmBattle instance = null;
-    private Enemy enemy;
-    private Player player;
+namespace Fall2020_CSC403_Project
+{
+	public partial class FrmBattle : Form
+	{
+		public static FrmBattle instance = null;
+		private Enemy enemy;
+		private Player player;
 
-    private FrmBattle() {
-      InitializeComponent();
-      player = Game.player;
-    }
+		private FrmBattle()
+		{
+			InitializeComponent();
+			player = Game.player;
+		}
 
-    public void Setup() {
-      // update for this enemy
-      picEnemy.BackgroundImage = enemy.Img;
-      picEnemy.Refresh();
-      BackColor = enemy.Color;
-      picBossBattle.Visible = false;
+		public void Setup()
+		{
+			// update for this enemy
+			picEnemy.BackgroundImage = enemy.Img;
+			picEnemy.Refresh();
+			BackColor = enemy.Color;
+			picBossBattle.Visible = false;
 
-      // Observer pattern
-      enemy.AttackEvent += PlayerDamage;
-      player.AttackEvent += EnemyDamage;
+			// Observer pattern
+			enemy.AttackEvent += PlayerDamage;
+			player.AttackEvent += EnemyDamage;
 
-      // show health
-      UpdateHealthBars();
-    }
+			// show health
+			UpdateHealthBars();
+		}
 
-     public static PrivateFontCollection addBloodyFont()
-        {
-         //Add bloody font to private font collection
-         PrivateFontCollection pfc = new PrivateFontCollection();
-         int fontLength = Properties.Resources.Bloody_terror_TTF.Length;
-         byte[] fontdata = Properties.Resources.Bloody_terror_TTF;
-         System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
-         Marshal.Copy(fontdata, 0, data, fontLength);
-         pfc.AddMemoryFont(data, fontLength);
-         return pfc;
-        }
+		/*
+		public static PrivateFontCollection addBloodyFont() {
+			//Add bloody font to private font collection
+			PrivateFontCollection pfc = new PrivateFontCollection();
+			int fontLength = Properties.Resources.Bloody_terror_TTF.Length;
+			byte[] fontdata = Properties.Resources.Bloody_terror_TTF;
+			System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
+			Marshal.Copy(fontdata, 0, data, fontLength);
+			pfc.AddMemoryFont(data, fontLength);
+			return pfc;
+		} */
 
-        public static FrmBattle GetInstance(Enemy enemy) {
-      if (instance == null) {
-        instance = new FrmBattle();
-        instance.enemy = enemy;
-        instance.Setup();
-      }
-      return instance;
-    }
+		public static FrmBattle GetInstance(Enemy enemy)
+		{
+			if (instance == null)
+			{
+				instance = new FrmBattle();
+				instance.enemy = enemy;
+				instance.Setup();
+			}
+			return instance;
+		}
 
-    private void UpdateHealthBars() {
-      float playerHealthPer = player.Health / (float)player.MaxHealth;
-      float enemyHealthPer = enemy.Health / (float)enemy.MaxHealth;
+		private void UpdateHealthBars()
+		{
+			float playerHealthPer = player.Health / (float)player.MaxHealth;
+			float enemyHealthPer = enemy.Health / (float)enemy.MaxHealth;
 
-      const int MAX_HEALTHBAR_WIDTH = 226;
-      lblPlayerHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * playerHealthPer);
-      lblEnemyHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * enemyHealthPer);
+			const int MAX_HEALTHBAR_WIDTH = 226;
+			lblPlayerHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * playerHealthPer);
+			lblEnemyHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * enemyHealthPer);
 
-      lblPlayerHealthFull.Text = player.Health.ToString();
-      lblEnemyHealthFull.Text = enemy.Health.ToString();
-    }
-        private int playerHitAmount()
-        {
-            Random rand = new Random();
-            uint hit = (uint)rand.Next(0,3);
+			lblPlayerHealthFull.Text = player.Health.ToString();
+			lblEnemyHealthFull.Text = enemy.Health.ToString();
+		}
+		private int playerHitAmount()
+		{
+			Random rand = new Random();
+			uint hit = (uint)rand.Next(0, 3);
 
-            if(hit == 0)
-            {
-                return -3;
-            }
-            if(hit == 1)
-            {
-                return -4;
-            }
-            if(hit == 2)
-            {
-                return -5;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        private int enemyHitAmount()
-        {
-            Random rand = new Random();
-            uint hit = (uint)rand.Next(0,3);
+			if (hit == 0)
+				return -3;
+			else if (hit == 1)
+				return -4;
+			else if (hit == 2)
+				return -5;
+			else
+				return 0;
+		}
+		private int enemyHitAmount()
+		{
+			Random rand = new Random();
+			uint hit = (uint)rand.Next(0, 3);
 
-            if (hit == 0)
-            {
-                return -2;
-            }
-            if (hit == 1)
-            {
-                return -3;
-            }
-            if (hit == 2)
-            {
-                return -4;
-            }
-            else
-            {
-                return 0;
-            }
-        }
+			if (hit == 0)
+				return -2;
+			else if (hit == 1)
+				return -3;
+			else if (hit == 2)
+				return -4;
+			else
+				return 0;
+		}
 
-        private void enemyEaten()
-        {
-            //Enemy eaten notification
-            Label enemyEaten = new Label();
-            Label test = new Label();
-            PrivateFontCollection pfc = addBloodyFont();
-            enemyEaten.TextAlign = ContentAlignment.TopCenter;
-            enemyEaten.Size = new Size(300, 100);
-            enemyEaten.Font = new Font(pfc.Families[0], 15);
-            enemyEaten.Text = "You have eaten the enemy and regained health";
-            enemyEaten.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 150);
-            enemyEaten.BackColor = Color.Black;
-            enemyEaten.ForeColor = Color.Red;
-            enemyEaten.Name = "eatEnemy";
-            this.Controls.Add(enemyEaten);
-            enemyEaten.BringToFront();
+		private void enemyEaten()
+		{
+			//Enemy eaten notification
+			Label enemyEaten = new Label();
+			Label test = new Label();
+			// PrivateFontCollection pfc = addBloodyFont();
+			enemyEaten.TextAlign = ContentAlignment.TopCenter;
+			enemyEaten.Size = new Size(300, 100);
+			// enemyEaten.Font = new Font(pfc.Families[0], 15);
+			enemyEaten.Text = "You have eaten the enemy and regained health";
+			enemyEaten.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 150);
+			enemyEaten.BackColor = Color.Black;
+			enemyEaten.ForeColor = Color.Red;
+			enemyEaten.Name = "eatEnemy";
+			this.Controls.Add(enemyEaten);
+			enemyEaten.BringToFront();
+		}
+		private void restoreHealth()
+		{
+			int currentHealth = player.Health;
+			int healthToAdd = 20 - currentHealth;
+			player.AlterHealth(healthToAdd);
+		}
 
-        }
-        private void restoreHealth()
-        {
-            int currentHealth = player.Health;
-            int healthToAdd = 20 - currentHealth;
-            player.AlterHealth(healthToAdd);
-        }
+		private void AddWinOrLossControls(string message, Color backgroundColor, EventHandler btnClickHandler)
+		{
+			// Create a panel to darken the background
+			Panel darkPanel = new Panel();
+			darkPanel.Size = this.ClientSize;
+			darkPanel.Location = Point.Empty;
+			darkPanel.BackColor = Color.FromArgb(128, 0, 0, 0);  // Semi-transparent
+			this.Controls.Add(darkPanel);
+			darkPanel.BringToFront();
 
-        private void AddWinOrLossControls(string message, Color backgroundColor, EventHandler btnClickHandler)
-        {
-            // Create a panel to darken the background
-            Panel darkPanel = new Panel();
-            darkPanel.Size = this.ClientSize;
-            darkPanel.Location = Point.Empty;
-            darkPanel.BackColor = Color.FromArgb(128, 0, 0, 0);  // Semi-transparent
-            this.Controls.Add(darkPanel);
-            darkPanel.BringToFront();
+			// Create a label to show the message
+			Label lblMessage = new Label();
+			lblMessage.Text = message;
+			lblMessage.Size = new Size(300, 50);
+			lblMessage.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25); // Centered
+			lblMessage.Font = new Font("Arial", 12, FontStyle.Bold);
+			lblMessage.ForeColor = Color.White;
+			lblMessage.BackColor = backgroundColor;
+			lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+			this.Controls.Add(lblMessage);
+			lblMessage.BringToFront();
 
-            // Create a label to show the message
-            Label lblMessage = new Label();
-            lblMessage.Text = message;
-            lblMessage.Size = new Size(300, 50);
-            lblMessage.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 25); // Centered
-            lblMessage.Font = new Font("Arial", 12, FontStyle.Bold);
-            lblMessage.ForeColor = Color.White;
-            lblMessage.BackColor = backgroundColor;
-            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
-            this.Controls.Add(lblMessage);
-            lblMessage.BringToFront();
-
-            // Create a button to proceed
-            Button btnProceed = new Button();
-            btnProceed.Text = "Proceed";
-            btnProceed.Size = new Size(100, 50);
-            btnProceed.Location = new Point(this.Width / 2 - 50, this.Height / 2 + 50); // Below the label
-            btnProceed.Click += btnClickHandler; // Attach click event handler
-            this.Controls.Add(btnProceed);
-            btnProceed.BringToFront();
-        }
+			// Create a button to proceed
+			Button btnProceed = new Button();
+			btnProceed.Text = "Proceed";
+			btnProceed.Size = new Size(100, 50);
+			btnProceed.Location = new Point(this.Width / 2 - 50, this.Height / 2 + 50); // Below the label
+			btnProceed.Click += btnClickHandler; // Attach click event handler
+			this.Controls.Add(btnProceed);
+			btnProceed.BringToFront();
+		}
 
 
-        private void btnProceedForWin_Click(object sender, EventArgs e)
-        {
-            // Code to proceed after winning
-            this.Close();
-        }
+		private void btnProceedForWin_Click(object sender, EventArgs e)
+		{
+			// Code to proceed after winning
+			this.Close();
+		}
 
-        private void btnProceedForLoss_Click(object sender, EventArgs e)
-        {
-            // Code to proceed after losing
-            Application.Exit();
-        }
+		private void btnProceedForLoss_Click(object sender, EventArgs e)
+		{
+			// Code to proceed after losing
+			Application.Exit();
+		}
 
-        // defeatEnemy method
-        private void defeatEnemy()
-        {
-            AddWinOrLossControls("Congrats! You defeated the opponent.", Color.Green, new EventHandler(btnProceedForWin_Click));
-            restoreHealth();
-            enemyEaten();
-            instance = null;
-            // Close();
-        }
+		private void defeatEnemy()
+		{
+			AddWinOrLossControls("Congrats! You defeated the opponent.", Color.Green, new EventHandler(btnProceedForWin_Click));
+			restoreHealth();
+			enemyEaten();
+			instance = null;
+			// Close();
+		}
 
-        private void defeatPlayer()
-        {
-            AddWinOrLossControls("Mr. Peanut died. You suck!", Color.Red, new EventHandler(btnProceedForLoss_Click));
-            instance = null;
-            // Close();
-        }
+		private void defeatPlayer()
+		{
+			AddWinOrLossControls("Mr. Peanut died. You suck!", Color.Red, new EventHandler(btnProceedForLoss_Click));
+			instance = null;
+			// Close();
+		}
 
+		private void btnAttack_Click(object sender, EventArgs e)
+		{
+			player.OnAttack(playerHitAmount()); //range -3, -4, -5
 
+			if (enemy.Health > 0)
+				enemy.OnAttack(enemyHitAmount()); //range -2,-3,-4
 
-        private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(playerHitAmount()); //range -3, -4, -5
-      if (enemy.Health > 0) {
-                enemy.OnAttack(enemyHitAmount()); //range -2,-3,-4
-      }
+			UpdateHealthBars();
 
-      UpdateHealthBars();
-      if (player.Health <= 0) {
-        defeatPlayer();
-        instance = null;
-        //Close();
-      }
-      else if(enemy.Health <= 0){
-            defeatEnemy();
-            instance = null;
-            //Close();
-        }
-    }
+			if (player.Health <= 0)
+			{
+				defeatPlayer();
+				instance = null;
+				//Close();
+			}
+			else if (enemy.Health <= 0)
+			{
+				defeatEnemy();
+				instance = null;
+				//Close();
+			}
+		}
 
-    private void EnemyDamage(int amount) {
-      enemy.AlterHealth(amount);
-    }
+		private void EnemyDamage(int amount)
+		{
+			enemy.AlterHealth(amount);
+		}
 
-    private void PlayerDamage(int amount) {
-      player.AlterHealth(amount);
-    }
-    
-    private void tmrFinalBattle_Tick(object sender, EventArgs e) {
-      picBossBattle.Visible = false;
-      tmrFinalBattle.Enabled = false;
-    }
+		private void PlayerDamage(int amount)
+		{
+			player.AlterHealth(amount);
+		}
 
-        private void picEnemy_Click(object sender, EventArgs e)
-        {
+		private void tmrFinalBattle_Tick(object sender, EventArgs e)
+		{
+			picBossBattle.Visible = false;
+			tmrFinalBattle.Enabled = false;
+		}
 
-        }
-    }
+		private void picEnemy_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
-
