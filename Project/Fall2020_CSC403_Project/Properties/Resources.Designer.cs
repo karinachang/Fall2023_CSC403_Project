@@ -71,6 +71,25 @@ namespace Fall2020_CSC403_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream boss {
+            get {
+                return ResourceManager.GetStream("boss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EatEnemyNotification {
+            get {
+                object obj = ResourceManager.GetObject("EatEnemyNotification", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap enemy_dead {
@@ -113,9 +132,9 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream final_battle {
+        internal static System.IO.UnmanagedMemoryStream menu {
             get {
-                return ResourceManager.GetStream("final_battle", resourceCulture);
+                return ResourceManager.GetStream("menu", resourceCulture);
             }
         }
         
@@ -132,9 +151,18 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream theme {
+        internal static System.IO.UnmanagedMemoryStream slowdramatic {
             get {
-                return ResourceManager.GetStream("theme", resourceCulture);
+                return ResourceManager.GetStream("slowdramatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream wahwahwah {
+            get {
+                return ResourceManager.GetStream("wahwahwah", resourceCulture);
             }
         }
         

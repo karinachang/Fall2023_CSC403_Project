@@ -161,5 +161,17 @@
   <ItemGroup>
     <None Include="data\EatEnemyNotification.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\boss.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\menu.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\slowdramatic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\wahwahwah.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

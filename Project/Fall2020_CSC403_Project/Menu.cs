@@ -13,7 +13,7 @@ namespace Fall2020_CSC403_Project
 {
 	public partial class Menu : Form
 	{
-		private SoundPlayer theme = new SoundPlayer(Properties.Resources.theme);
+		private SoundPlayer theme = new SoundPlayer(Properties.Resources.menu);
 
 		public Menu()
 		{
