@@ -1,4 +1,6 @@
-﻿namespace Fall2020_CSC403_Project {
+﻿using System.Drawing;
+
+namespace Fall2020_CSC403_Project {
   partial class FrmBattle {
     /// <summary>
     /// Required designer variable.
@@ -25,6 +27,9 @@
     private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.btnAttack = new System.Windows.Forms.Button();
+            this.btnRock = new System.Windows.Forms.Button();
+            this.btnPaper = new System.Windows.Forms.Button();
+            this.btnScissors = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +54,42 @@
             this.btnAttack.Text = "Attack";
             this.btnAttack.UseVisualStyleBackColor = true;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
-            // 
+            //
+            //btnRock
+            //
+            this.btnRock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRock.Location = new System.Drawing.Point(169, 574);
+            this.btnRock.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRock.Name = "btnRock";
+            this.btnRock.Size = new System.Drawing.Size(171, 53);
+            this.btnRock.TabIndex = 2;
+            this.btnRock.Text = "Rock";
+            this.btnRock.UseVisualStyleBackColor = true;
+            this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
+            //
+            //btnPaper
+            //
+            this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaper.Location = new System.Drawing.Point(369, 574);
+            this.btnPaper.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPaper.Name = "btnPaper";
+            this.btnPaper.Size = new System.Drawing.Size(171, 53);
+            this.btnPaper.TabIndex = 2;
+            this.btnPaper.Text = "Paper";
+            this.btnPaper.UseVisualStyleBackColor = true;
+            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
+            //
+            //btnScissors
+            //
+            this.btnScissors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScissors.Location = new System.Drawing.Point(569, 574);
+            this.btnScissors.Margin = new System.Windows.Forms.Padding(4);
+            this.btnScissors.Name = "btnScissors";
+            this.btnScissors.Size = new System.Drawing.Size(171, 53);
+            this.btnScissors.TabIndex = 2;
+            this.btnScissors.Text = "Scissors";
+            this.btnScissors.UseVisualStyleBackColor = true;
+            this.btnScissors.Click += new System.EventHandler(this.btnScissors_Click);
             // lblPlayerHealthFull
             // 
             this.lblPlayerHealthFull.BackColor = System.Drawing.Color.Blue;
@@ -149,6 +189,9 @@
             this.Controls.Add(this.lblPlayerHealthFull);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAttack);
+            this.Controls.Add(this.btnRock);
+            this.Controls.Add(this.btnPaper);
+            this.Controls.Add(this.btnScissors);
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
             this.DoubleBuffered = true;
@@ -168,6 +211,9 @@
     private System.Windows.Forms.PictureBox picPlayer;
     private System.Windows.Forms.PictureBox picEnemy;
     private System.Windows.Forms.Button btnAttack;
+    private System.Windows.Forms.Button btnRock;
+    private System.Windows.Forms.Button btnPaper;
+    private System.Windows.Forms.Button btnScissors;
     private System.Windows.Forms.Label lblPlayerHealthFull;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;

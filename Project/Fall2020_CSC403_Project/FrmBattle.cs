@@ -107,7 +107,6 @@ namespace Fall2020_CSC403_Project
 		{
 			//Enemy eaten notification
 			Label enemyEaten = new Label();
-			Label test = new Label();
 			// PrivateFontCollection pfc = addBloodyFont();
 			enemyEaten.TextAlign = ContentAlignment.TopCenter;
 			enemyEaten.Size = new Size(300, 100);
@@ -210,8 +209,22 @@ namespace Fall2020_CSC403_Project
 				//Close();
 			}
 		}
+		
+		private void btnRock_Click(object sender, EventArgs e)
+		{
+            //player chose rock
+        }
 
-		private void EnemyDamage(int amount)
+        private void btnPaper_Click(object sender, EventArgs e)
+        {
+            //player chose Paper
+        }
+        private void btnScissors_Click(object sender, EventArgs e)
+        {
+            //player chose Scissors
+        }
+
+        private void EnemyDamage(int amount)
 		{
 			enemy.AlterHealth(amount);
 		}
