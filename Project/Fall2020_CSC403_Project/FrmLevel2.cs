@@ -12,6 +12,8 @@ namespace Fall2020_CSC403_Project {
 		private Enemy enemyKitkat1;
 		private Enemy enemyKitkat2;
 		private Enemy enemyKitkat3;
+		private Enemy enemyKitkat4;
+		private Enemy enemyKitkat5;
 		private Character[] walls;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
@@ -34,17 +36,23 @@ namespace Fall2020_CSC403_Project {
             enemyKitkat1 = new Enemy(CreatePosition(picEnemyKitkat1), CreateCollider(picEnemyKitkat1, PADDING));
 			enemyKitkat2 = new Enemy(CreatePosition(picEnemyKitkat2), CreateCollider(picEnemyKitkat2, PADDING));
 			enemyKitkat3 = new Enemy(CreatePosition(picEnemyKitkat3), CreateCollider(picEnemyKitkat3, PADDING));
+			enemyKitkat4 = new Enemy(CreatePosition(picEnemyKitkat4), CreateCollider(picEnemyKitkat4, PADDING));
+			enemyKitkat5 = new Enemy(CreatePosition(picEnemyKitkat5), CreateCollider(picEnemyKitkat5, PADDING));
 
 
 			enemyKitkat.Img = picEnemyKitkat.BackgroundImage;
 			enemyKitkat1.Img = picEnemyKitkat1.BackgroundImage;
 			enemyKitkat2.Img = picEnemyKitkat2.BackgroundImage;
             enemyKitkat3.Img = picEnemyKitkat3.BackgroundImage;
+            enemyKitkat4.Img = picEnemyKitkat4.BackgroundImage;
+            enemyKitkat5.Img = picEnemyKitkat5.BackgroundImage;
 
 			enemyKitkat.Color = Color.FromArgb(255, 245, 161);
 			enemyKitkat1.Color = Color.Blue;
 			enemyKitkat2.Color = Color.Green;
 			enemyKitkat3.Color = Color.Red;
+			enemyKitkat4.Color = Color.Red;
+			enemyKitkat5.Color = Color.Red;
 
 			walls = new Character[NUM_WALLS];
 			for (int w = 0; w < NUM_WALLS; w++) {
@@ -90,11 +98,7 @@ namespace Fall2020_CSC403_Project {
 				player.MoveBack();
 
 			// check collision with enemies
-			if (HitAChar(player, enemyKitkat2) && enemyKitkat2.Health > 0) {
-				Fight(enemyKitkat2);
-				picEnemyKitkat2.BackgroundImage = picEnemyDead.BackgroundImage;
-			}
-			else if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
+			if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
 				Fight(enemyKitkat);
 				picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
@@ -103,9 +107,21 @@ namespace Fall2020_CSC403_Project {
                 Fight(enemyKitkat1);
                 picEnemyKitkat1.BackgroundImage = picEnemyDead.BackgroundImage;
             }
+			else if (HitAChar(player, enemyKitkat2) && enemyKitkat2.Health > 0) {
+				Fight(enemyKitkat2);
+				picEnemyKitkat2.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
             else if (HitAChar(player, enemyKitkat3) && enemyKitkat3.Health > 0) {
 				Fight(enemyKitkat3);
 				picEnemyKitkat3.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if (HitAChar(player, enemyKitkat4) && enemyKitkat4.Health > 0) {
+				Fight(enemyKitkat4);
+				picEnemyKitkat4.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if (HitAChar(player, enemyKitkat5) && enemyKitkat5.Health > 0) {
+				Fight(enemyKitkat5);
+				picEnemyKitkat5.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 
 			// update player's picture box
