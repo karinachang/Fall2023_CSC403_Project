@@ -288,10 +288,10 @@
             this.picEnemyKitkat.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyKitkat.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat;
             this.picEnemyKitkat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyKitkat.Location = new System.Drawing.Point(795, 289);
+            this.picEnemyKitkat.Location = new System.Drawing.Point(825, 337);
             this.picEnemyKitkat.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyKitkat.Name = "picEnemyKitkat";
-            this.picEnemyKitkat.Size = new System.Drawing.Size(159, 158);
+            this.picEnemyKitkat.Size = new System.Drawing.Size(138, 110);
             this.picEnemyKitkat.TabIndex = 5;
             this.picEnemyKitkat.TabStop = false;
             // 
