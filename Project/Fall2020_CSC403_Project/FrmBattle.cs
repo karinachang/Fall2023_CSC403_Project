@@ -209,20 +209,126 @@ namespace Fall2020_CSC403_Project
 				//Close();
 			}
 		}
+
+		private string enemy_Choice()
+		{
+            Random rand = new Random();
+			String choice;
+            uint num = (uint)rand.Next(0, 3);
+			if (num == 0){
+				choice = "Rock";
+			}
+			else if (num == 1){
+				choice = "Paper";
+			}
+			else
+			{
+				choice = "Scissors";
+			}
+				
+            return choice; //0,1,2
+		}
 		
 		private void btnRock_Click(object sender, EventArgs e)
 		{
-            //player chose rock
+			if (enemy.Health > 0){
+                //player chose rock
+                String enemyChoice;
+                String playerChoice;
+                enemyChoice = enemy_Choice();
+                playerChoice = "Rock";
+                player_v_enemy(playerChoice, enemyChoice);
+            }
+
+			UpdateHealthBars();
+
+			if (player.Health <= 0){
+				defeatPlayer();
+				instance = null;
+			}
+			else if (enemy.Health <= 0){
+				defeatEnemy();
+				instance = null;
+			}
         }
 
         private void btnPaper_Click(object sender, EventArgs e)
         {
             //player chose Paper
+            if (enemy.Health > 0){
+                String enemyChoice;
+                String playerChoice;
+                enemyChoice = enemy_Choice();
+                playerChoice = "Paper";
+                player_v_enemy(playerChoice, enemyChoice);
+            }
+
+            UpdateHealthBars();
+
+            if (player.Health <= 0){
+                defeatPlayer();
+                instance = null;
+            }
+            else if (enemy.Health <= 0){
+                defeatEnemy();
+                instance = null;
+            }
         }
         private void btnScissors_Click(object sender, EventArgs e)
         {
             //player chose Scissors
+            if (enemy.Health > 0){
+                String enemyChoice;
+                String playerChoice;
+                enemyChoice = enemy_Choice();
+                playerChoice = "Scissors";
+                player_v_enemy(playerChoice, enemyChoice);
+            }
+
+            UpdateHealthBars();
+
+            if (player.Health <= 0){
+                defeatPlayer();
+                instance = null;
+            }
+            else if (enemy.Health <= 0){
+                defeatEnemy();
+                instance = null;
+            }
         }
+
+		private void player_v_enemy(String playerChoice, String enemyChoice)
+		{
+			if (playerChoice == "Rock")
+			{
+				if (enemyChoice == "Paper"){
+					enemy.OnAttack(enemyHitAmount());
+				}
+				if (enemyChoice == "Scissors"){
+					player.OnAttack(playerHitAmount());
+				}
+			}
+			if (playerChoice == "Paper")
+			{
+				if (enemyChoice == "Rock"){
+					player.OnAttack(playerHitAmount());
+				}
+				if (enemyChoice == "Scissors"){
+					enemy.OnAttack(enemyHitAmount());
+				}
+			}
+			if (playerChoice == "Scissors")
+			{
+				if (enemyChoice == "Rock")
+				{
+					enemy.OnAttack(enemyHitAmount());
+				}
+				if (enemyChoice == "Paper")
+				{
+					player.OnAttack(playerHitAmount());
+				}
+			}
+		}
 
         private void EnemyDamage(int amount)
 		{
