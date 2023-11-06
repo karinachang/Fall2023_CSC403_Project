@@ -16,10 +16,13 @@ namespace Fall2020_CSC403_Project {
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
 		private FrmBattle frmBattle;
+        private SoundPlayer song = new SoundPlayer(Properties.Resources.boss);
 
-		public FrmLevel3() {
+        public FrmLevel3() {
 			InitializeComponent();
-		}
+			// start the song
+            song.PlayLooping();
+        }
 
 		private void FrmLevel3_Load(object sender, EventArgs e) {
 			const int PADDING = 7;
