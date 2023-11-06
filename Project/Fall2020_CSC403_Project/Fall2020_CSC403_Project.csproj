@@ -173,5 +173,32 @@
   <ItemGroup>
     <None Include="data\wahwahwah.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_kitkat9.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
