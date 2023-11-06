@@ -23,12 +23,12 @@ namespace Fall2020_CSC403_Project
 
             // starts the level, when level window is closed this returns control to here to then close the menu
             // COMMENT OUT ALL LEVELS EXCEPT THE ONE YOU WANT TO TEST/RUN
-            FrmLevel level1 = new FrmLevel();
-            // FrmLevel2 newGame = new FrmLevel2();
-            // FrmLevel3 newGame = new FrmLevel3();
-            level1.Size = new Size(1160, 740);
+            FrmLevel level = new FrmLevel();
+            // FrmLevel2 level  = new FrmLevel2();
+            // FrmLevel3 level = new FrmLevel3();
+            level.Size = new Size(1160, 740);
 			this.Hide();
-            level1.ShowDialog();
+            level.ShowDialog();
 
 			// control returned here, close the whole Application
 			this.Close();
