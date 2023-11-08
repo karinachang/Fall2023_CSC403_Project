@@ -8,9 +8,7 @@ namespace Fall2020_CSC403_Project {
 	public partial class FrmLevel3 : Form {
 		private Player player;
 		private bool isPaused = false;
-		private Enemy enemyReeses;
 		private Enemy bossHersheys;
-		private Enemy enemyKitkat;
 		private Character[] walls;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
@@ -57,17 +55,12 @@ namespace Fall2020_CSC403_Project {
 
 			player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
 			bossHersheys = new Enemy(CreatePosition(picBossHersheys), CreateCollider(picBossHersheys, PADDING));
-			enemyReeses = new Enemy(CreatePosition(picEnemyReeses), CreateCollider(picEnemyReeses, PADDING));
-			enemyKitkat = new Enemy(CreatePosition(picEnemyKitkat), CreateCollider(picEnemyKitkat, PADDING));
 	  
 
 			bossHersheys.Img = picBossHersheys.BackgroundImage;
-			enemyReeses.Img = picEnemyReeses.BackgroundImage;
-			enemyKitkat.Img = picEnemyKitkat.BackgroundImage;
 
 			bossHersheys.Color = Color.Red;
-			enemyReeses.Color = Color.Green;
-			enemyKitkat.Color = Color.FromArgb(255, 245, 161);
+
 
 			walls = new Character[NUM_WALLS];
 			for (int w = 0; w < NUM_WALLS; w++) {
@@ -122,15 +115,7 @@ namespace Fall2020_CSC403_Project {
 			if (HitAWall(player))
 				player.MoveBack();
 
-			// check collision with enemies
-			if (HitAChar(player, enemyReeses) && enemyReeses.Health > 0) {
-				Fight(enemyReeses);
-				picEnemyReeses.BackgroundImage = picEnemyDead.BackgroundImage;
-			}
-			else if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
-				Fight(enemyKitkat);
-				picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
-			}
+			// check collision with enemy
 			if (HitAChar(player, bossHersheys) && bossHersheys.Health > 0) {
 				Fight(bossHersheys);
 				picBossHersheys.BackgroundImage = picEnemyDead.BackgroundImage;

@@ -402,7 +402,7 @@
             // 
             this.picDoor.BackColor = System.Drawing.Color.IndianRed;
             this.picDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picDoor.Location = new System.Drawing.Point(1325, 22);
+            this.picDoor.Location = new System.Drawing.Point(1323, 128);
             this.picDoor.Margin = new System.Windows.Forms.Padding(2);
             this.picDoor.Name = "picDoor";
             this.picDoor.Size = new System.Drawing.Size(153, 151);
