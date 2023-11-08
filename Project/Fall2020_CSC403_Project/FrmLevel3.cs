@@ -16,6 +16,36 @@ namespace Fall2020_CSC403_Project {
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
 		private FrmBattle frmBattle;
+        private PictureBox healthBarBackground;
+        private PictureBox healthBar;
+        private Label lblHealthValue;
+
+        private void InitializeHealthBar()
+        {
+            // Initialize Health Bar Background
+            healthBarBackground = new PictureBox();
+            healthBarBackground.Size = new Size(200, 25);
+            healthBarBackground.Location = new Point(10, this.ClientSize.Height - healthBarBackground.Height - 10);
+            healthBarBackground.BackColor = Color.Gray;
+            this.Controls.Add(healthBarBackground);
+
+            // Initialize Actual Health Bar
+            healthBar = new PictureBox();
+            healthBar.Size = new Size(200, 25);
+            healthBar.Location = new Point(10, this.ClientSize.Height - healthBar.Height - 10);
+            healthBar.BackColor = Color.Green;
+            this.Controls.Add(healthBar);
+            healthBar.BringToFront();
+
+            // Initialize Health Value Label
+            lblHealthValue = new Label();
+            lblHealthValue.Size = new Size(50, 25);
+            lblHealthValue.Location = new Point(healthBarBackground.Right + 10, healthBarBackground.Top);
+            lblHealthValue.ForeColor = Color.Black;
+            lblHealthValue.Text = player.Health.ToString();
+            this.Controls.Add(lblHealthValue);
+            lblHealthValue.BringToFront();
+        }
 
         public FrmLevel3() {
 			InitializeComponent();
@@ -50,9 +80,19 @@ namespace Fall2020_CSC403_Project {
 			// handling timer
 			timeBegin = DateTime.Now;
 			totalTimePaused = new TimeSpan(0, 0, 0, 0, 0);
-		}
+            InitializeHealthBar();
+            // Update the health bar with the initial value
+            UpdateHealthBar();
+        }
 
-		private Vector2 CreatePosition(PictureBox pic) {
+        private void UpdateHealthBar()
+        {
+            float healthPercentage = (float)player.Health / player.MaxHealth;
+            healthBar.Width = (int)(healthPercentage * healthBarBackground.Width);
+            lblHealthValue.Text = player.Health.ToString();
+        }
+
+        private Vector2 CreatePosition(PictureBox pic) {
 			return new Vector2(pic.Location.X, pic.Location.Y);
 		}
 
@@ -115,15 +155,16 @@ namespace Fall2020_CSC403_Project {
 			return you.Collider.Intersects(other.Collider);
 		}
 
-		private void Fight(Enemy enemy)
-		{
-			player.ResetMoveSpeed();
-			player.MoveBack();
-			frmBattle = FrmBattle.GetInstance(enemy);
-			frmBattle.Show();
-		}
+        private void Fight(Enemy enemy)
+        {
+            player.ResetMoveSpeed();
+            player.MoveBack();
+            frmBattle = FrmBattle.GetInstance(enemy);
+            frmBattle.ShowDialog(); // Make the battle form modal
+            UpdateHealthBar(); // Update health bar after the battle
+        }
 
-		private Bitmap BlurImage(Bitmap image)
+        private Bitmap BlurImage(Bitmap image)
 		{
 			float blurValue = 5.0f;
 			Bitmap result = new Bitmap(image.Width, image.Height);
