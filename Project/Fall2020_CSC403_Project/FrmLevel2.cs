@@ -1,5 +1,7 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
+using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
@@ -19,6 +21,7 @@ namespace Fall2020_CSC403_Project {
 		private Enemy enemyKitkat8;
 		private Enemy enemyKitkat9;
 		private Character[] walls;
+		private Character door;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
@@ -73,6 +76,8 @@ namespace Fall2020_CSC403_Project {
 				walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
 			}
 
+			door = new Character(CreatePosition(picDoor), CreateCollider(picDoor, PADDING));
+
 			Game.player = player;
 
 			// handling timer
@@ -99,6 +104,11 @@ namespace Fall2020_CSC403_Project {
 			lblInGameTime.Text = "Time: " + time.ToString();
 		}
 
+		private void SwitchLevel()
+		{
+			//ETHAN
+		}
+
 		private void tmrPlayerMove_Tick(object sender, EventArgs e) {
 			if (isPaused)
 				return; // Skip moving if the game is paused
@@ -109,7 +119,13 @@ namespace Fall2020_CSC403_Project {
 			// check collision with walls
 			if (HitAWall(player))
 				player.MoveBack();
-
+			// check collision with door
+			if (HitADoor(player) && enemyKitkat6.Health<0){
+				SwitchLevel();
+			}
+			else if (HitADoor(player)){
+                player.MoveBack();
+            }
 			// check collision with enemies
 			if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
 				Fight(enemyKitkat);
@@ -166,6 +182,10 @@ namespace Fall2020_CSC403_Project {
 				}
 			}
 			return hitAWall;
+		}
+
+		private bool HitADoor(Character c) {
+			return c.Collider.Intersects(door.Collider);
 		}
 
 		private bool HitAChar(Character you, Character other) {
