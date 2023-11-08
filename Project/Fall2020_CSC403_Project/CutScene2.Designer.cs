@@ -1,6 +1,6 @@
 ﻿namespace Fall2020_CSC403_Project
 {
-    partial class CutScene
+    partial class CutScene2
     {
         /// <summary>
         /// Required designer variable.
@@ -43,9 +43,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(68, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1273, 115);
+            this.label1.Size = new System.Drawing.Size(1222, 115);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Level 01 - Reese\'s Roost";
+            this.label1.Text = "Level 02 - Kit Cat Cove";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -64,8 +64,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
-            this.pictureBox1.Location = new System.Drawing.Point(665, 299);
+            this.pictureBox1.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat;
+            this.pictureBox1.Location = new System.Drawing.Point(656, 300);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(750, 427);
@@ -73,7 +73,7 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // CutScene
+            // CutScene2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,10 +85,10 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CutScene";
+            this.Name = "CutScene2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Level 01 - Reese\'s Roost";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CutScene_KeyDown);
+            this.Text = "Level 02 - Kit Cat Cove";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CutScene2_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

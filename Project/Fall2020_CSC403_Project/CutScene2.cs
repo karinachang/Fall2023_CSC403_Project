@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-	public partial class CutScene : Form
+	public partial class CutScene2 : Form
 	{
-        private SoundPlayer song = new SoundPlayer(Properties.Resources.slowdramatic);
-        public CutScene()
+        private SoundPlayer song = new SoundPlayer(Properties.Resources.wahwahwah);
+        public CutScene2()
 		{
 			InitializeComponent();
             // start the song
@@ -19,16 +19,16 @@ namespace Fall2020_CSC403_Project
 		private void StartLevel()
 		{
             // starts the level
-            FrmLevel level  = new FrmLevel();
-            level.Size = new Size(1160, 740);
+            FrmLevel2 level2  = new FrmLevel2();
+            level2.Size = new Size(1160, 740);
 			this.Hide();
-            level.ShowDialog();
+            level2.ShowDialog();
 
 			// control returned here
 			this.Close();
 		}
 
-        private void CutScene_KeyDown(object sender, KeyEventArgs e) {
+        private void CutScene2_KeyDown(object sender, KeyEventArgs e) {
             // wait for Enter key to be pressed
             switch (e.KeyCode) {
                 case Keys.Enter:

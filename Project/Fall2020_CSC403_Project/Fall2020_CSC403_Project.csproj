@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackStory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackStory.Designer.cs">
+      <DependentUpon>BackStory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CutScene3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CutScene3.Designer.cs">
+      <DependentUpon>CutScene3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CutScene2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CutScene2.Designer.cs">
+      <DependentUpon>CutScene2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +102,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BackStory.resx">
+      <DependentUpon>BackStory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CutScene3.resx">
+      <DependentUpon>CutScene3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CutScene2.resx">
+      <DependentUpon>CutScene2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </EmbeddedResource>

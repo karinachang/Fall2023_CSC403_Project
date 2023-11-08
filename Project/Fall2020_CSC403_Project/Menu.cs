@@ -18,11 +18,8 @@ namespace Fall2020_CSC403_Project
 
 		private void StartGame(object sender, EventArgs e)
 		{
-			// stop this level's song
-			song.Stop();
-
             // starts the level, when level window is closed this returns control to here to then close the menu
-            // COMMENT OUT ALL LEVELS/CUTSCENES EXCEPT THE ONE YOU WANT TO TEST/RUN
+            // COMMENT OUT ALL LEVELS/BACKSTORY EXCEPT THE ONE YOU WANT TO TEST/RUN
             // FrmLevel level = new FrmLevel();
             // FrmLevel2 level  = new FrmLevel2();
             // FrmLevel3 level = new FrmLevel3();
@@ -31,10 +28,10 @@ namespace Fall2020_CSC403_Project
             this.Hide();
             level.ShowDialog();
 			*/
-            CutScene cutScene = new CutScene();
-            cutScene.Size = new Size(800, 450);
+            BackStory backStory = new BackStory();
+            backStory.Size = new Size(800, 450);
 			this.Hide();
-            cutScene.ShowDialog();
+            backStory.ShowDialog();
 
 			// control returned here, close the whole Application
 			this.Close();

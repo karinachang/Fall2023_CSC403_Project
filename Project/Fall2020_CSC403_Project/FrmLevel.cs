@@ -16,12 +16,9 @@ namespace Fall2020_CSC403_Project {
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
 		private FrmBattle frmBattle;
-        private SoundPlayer song = new SoundPlayer(Properties.Resources.slowdramatic);
 
         public FrmLevel() {
 			InitializeComponent();
-			// start the song
-            song.PlayLooping();
         }
 
 		private void FrmLevel_Load(object sender, EventArgs e) {
