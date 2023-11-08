@@ -112,7 +112,7 @@
             this.picEnemyKitkat9.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat9;
             this.picEnemyKitkat9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat9.Location = new System.Drawing.Point(748, 22);
-            this.picEnemyKitkat9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat9.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat9.Name = "picEnemyKitkat9";
             this.picEnemyKitkat9.Size = new System.Drawing.Size(139, 83);
             this.picEnemyKitkat9.TabIndex = 26;
@@ -124,7 +124,7 @@
             this.picEnemyKitkat8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat8;
             this.picEnemyKitkat8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat8.Location = new System.Drawing.Point(1224, 559);
-            this.picEnemyKitkat8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat8.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat8.Name = "picEnemyKitkat8";
             this.picEnemyKitkat8.Size = new System.Drawing.Size(205, 127);
             this.picEnemyKitkat8.TabIndex = 25;
@@ -136,7 +136,7 @@
             this.picEnemyKitkat7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat7;
             this.picEnemyKitkat7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat7.Location = new System.Drawing.Point(70, 48);
-            this.picEnemyKitkat7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat7.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat7.Name = "picEnemyKitkat7";
             this.picEnemyKitkat7.Size = new System.Drawing.Size(242, 168);
             this.picEnemyKitkat7.TabIndex = 24;
@@ -148,7 +148,7 @@
             this.picEnemyKitkat4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat4;
             this.picEnemyKitkat4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat4.Location = new System.Drawing.Point(1028, 109);
-            this.picEnemyKitkat4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picEnemyKitkat4.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyKitkat4.Name = "picEnemyKitkat4";
             this.picEnemyKitkat4.Size = new System.Drawing.Size(129, 92);
             this.picEnemyKitkat4.TabIndex = 21;
@@ -159,7 +159,7 @@
             this.picWall11.BackColor = System.Drawing.Color.Transparent;
             this.picWall11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall11.Location = new System.Drawing.Point(3, 337);
-            this.picWall11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picWall11.Margin = new System.Windows.Forms.Padding(2);
             this.picWall11.Name = "picWall11";
             this.picWall11.Size = new System.Drawing.Size(18, 333);
             this.picWall11.TabIndex = 17;
@@ -170,7 +170,7 @@
             this.picWall2.BackColor = System.Drawing.Color.Transparent;
             this.picWall2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall2.Location = new System.Drawing.Point(734, 1);
-            this.picWall2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall2.Margin = new System.Windows.Forms.Padding(4);
             this.picWall2.Name = "picWall2";
             this.picWall2.Size = new System.Drawing.Size(821, 15);
             this.picWall2.TabIndex = 16;
@@ -181,7 +181,7 @@
             this.picWall8.BackColor = System.Drawing.Color.Transparent;
             this.picWall8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall8.Location = new System.Drawing.Point(1553, 337);
-            this.picWall8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall8.Margin = new System.Windows.Forms.Padding(4);
             this.picWall8.Name = "picWall8";
             this.picWall8.Size = new System.Drawing.Size(15, 553);
             this.picWall8.TabIndex = 15;
@@ -192,7 +192,7 @@
             this.picWall7.BackColor = System.Drawing.Color.Transparent;
             this.picWall7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall7.Location = new System.Drawing.Point(952, 864);
-            this.picWall7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall7.Margin = new System.Windows.Forms.Padding(4);
             this.picWall7.Name = "picWall7";
             this.picWall7.Size = new System.Drawing.Size(603, 26);
             this.picWall7.TabIndex = 14;
@@ -203,7 +203,7 @@
             this.picWall1.BackColor = System.Drawing.Color.Transparent;
             this.picWall1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall1.Location = new System.Drawing.Point(20, 1);
-            this.picWall1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall1.Margin = new System.Windows.Forms.Padding(4);
             this.picWall1.Name = "picWall1";
             this.picWall1.Size = new System.Drawing.Size(716, 15);
             this.picWall1.TabIndex = 13;
@@ -214,7 +214,7 @@
             this.picWall0.BackColor = System.Drawing.Color.Transparent;
             this.picWall0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall0.Location = new System.Drawing.Point(2, 1);
-            this.picWall0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall0.Margin = new System.Windows.Forms.Padding(4);
             this.picWall0.Name = "picWall0";
             this.picWall0.Size = new System.Drawing.Size(19, 477);
             this.picWall0.TabIndex = 12;
@@ -225,7 +225,7 @@
             this.picWall10.BackColor = System.Drawing.Color.Transparent;
             this.picWall10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall10.Location = new System.Drawing.Point(1553, 1);
-            this.picWall10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picWall10.Margin = new System.Windows.Forms.Padding(2);
             this.picWall10.Name = "picWall10";
             this.picWall10.Size = new System.Drawing.Size(15, 339);
             this.picWall10.TabIndex = 11;
@@ -237,7 +237,7 @@
             this.picWall9.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall9.Location = new System.Drawing.Point(84, 1);
-            this.picWall9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picWall9.Margin = new System.Windows.Forms.Padding(2);
             this.picWall9.Name = "picWall9";
             this.picWall9.Size = new System.Drawing.Size(292, 10);
             this.picWall9.TabIndex = 10;
@@ -248,7 +248,7 @@
             this.picWall6.BackColor = System.Drawing.Color.Transparent;
             this.picWall6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall6.Location = new System.Drawing.Point(476, 864);
-            this.picWall6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall6.Margin = new System.Windows.Forms.Padding(4);
             this.picWall6.Name = "picWall6";
             this.picWall6.Size = new System.Drawing.Size(478, 26);
             this.picWall6.TabIndex = 9;
@@ -260,7 +260,7 @@
             this.picWall12.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall12.Location = new System.Drawing.Point(424, 1);
-            this.picWall12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picWall12.Margin = new System.Windows.Forms.Padding(2);
             this.picWall12.Name = "picWall12";
             this.picWall12.Size = new System.Drawing.Size(135, 15);
             this.picWall12.TabIndex = 8;
@@ -271,7 +271,7 @@
             this.picWall4.BackColor = System.Drawing.Color.Transparent;
             this.picWall4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall4.Location = new System.Drawing.Point(2, 559);
-            this.picWall4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall4.Margin = new System.Windows.Forms.Padding(4);
             this.picWall4.Name = "picWall4";
             this.picWall4.Size = new System.Drawing.Size(19, 312);
             this.picWall4.TabIndex = 7;
@@ -282,7 +282,7 @@
             this.picWall5.BackColor = System.Drawing.Color.Transparent;
             this.picWall5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall5.Location = new System.Drawing.Point(2, 864);
-            this.picWall5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall5.Margin = new System.Windows.Forms.Padding(4);
             this.picWall5.Name = "picWall5";
             this.picWall5.Size = new System.Drawing.Size(478, 26);
             this.picWall5.TabIndex = 6;
@@ -294,7 +294,7 @@
             this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall3.Location = new System.Drawing.Point(3, 486);
-            this.picWall3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picWall3.Margin = new System.Windows.Forms.Padding(4);
             this.picWall3.Name = "picWall3";
             this.picWall3.Size = new System.Drawing.Size(18, 43);
             this.picWall3.TabIndex = 3;
@@ -306,7 +306,7 @@
             this.picEnemyDead.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_dead;
             this.picEnemyDead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picEnemyDead.Location = new System.Drawing.Point(2, 161);
-            this.picEnemyDead.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picEnemyDead.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyDead.Name = "picEnemyDead";
             this.picEnemyDead.Size = new System.Drawing.Size(19, 118);
             this.picEnemyDead.TabIndex = 18;
@@ -318,7 +318,7 @@
             this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.Location = new System.Drawing.Point(748, 303);
-            this.picPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(72, 131);
             this.picPlayer.TabIndex = 0;
@@ -331,7 +331,7 @@
             this.picEnemyKitkat2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat2.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
             this.picEnemyKitkat2.Location = new System.Drawing.Point(192, 559);
-            this.picEnemyKitkat2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat2.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat2.Name = "picEnemyKitkat2";
             this.picEnemyKitkat2.Size = new System.Drawing.Size(163, 118);
             this.picEnemyKitkat2.TabIndex = 4;
@@ -344,7 +344,7 @@
             this.picEnemyKitkat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat.Cursor = System.Windows.Forms.Cursors.Cross;
             this.picEnemyKitkat.Location = new System.Drawing.Point(119, 396);
-            this.picEnemyKitkat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat.Name = "picEnemyKitkat";
             this.picEnemyKitkat.Size = new System.Drawing.Size(162, 115);
             this.picEnemyKitkat.TabIndex = 5;
@@ -356,7 +356,7 @@
             this.picEnemyKitkat3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat3;
             this.picEnemyKitkat3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat3.Location = new System.Drawing.Point(972, 592);
-            this.picEnemyKitkat3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picEnemyKitkat3.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyKitkat3.Name = "picEnemyKitkat3";
             this.picEnemyKitkat3.Size = new System.Drawing.Size(171, 94);
             this.picEnemyKitkat3.TabIndex = 19;
@@ -368,7 +368,7 @@
             this.picEnemyKitkat1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat1;
             this.picEnemyKitkat1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat1.Location = new System.Drawing.Point(418, 161);
-            this.picEnemyKitkat1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat1.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat1.Name = "picEnemyKitkat1";
             this.picEnemyKitkat1.Size = new System.Drawing.Size(141, 96);
             this.picEnemyKitkat1.TabIndex = 20;
@@ -380,7 +380,7 @@
             this.picEnemyKitkat5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat5;
             this.picEnemyKitkat5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat5.Location = new System.Drawing.Point(558, 707);
-            this.picEnemyKitkat5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat5.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat5.Name = "picEnemyKitkat5";
             this.picEnemyKitkat5.Size = new System.Drawing.Size(178, 120);
             this.picEnemyKitkat5.TabIndex = 22;
@@ -392,7 +392,7 @@
             this.picEnemyKitkat6.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat6;
             this.picEnemyKitkat6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyKitkat6.Location = new System.Drawing.Point(1071, 375);
-            this.picEnemyKitkat6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEnemyKitkat6.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat6.Name = "picEnemyKitkat6";
             this.picEnemyKitkat6.Size = new System.Drawing.Size(161, 119);
             this.picEnemyKitkat6.TabIndex = 23;
@@ -402,7 +402,7 @@
             // 
             this.picDoor.BackColor = System.Drawing.Color.IndianRed;
             this.picDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picDoor.Location = new System.Drawing.Point(1415, 109);
+            this.picDoor.Location = new System.Drawing.Point(1325, 22);
             this.picDoor.Margin = new System.Windows.Forms.Padding(2);
             this.picDoor.Name = "picDoor";
             this.picDoor.Size = new System.Drawing.Size(153, 151);
@@ -445,7 +445,7 @@
             this.Controls.Add(this.picEnemyKitkat5);
             this.Controls.Add(this.picEnemyKitkat6);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLevel2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Level 02 - Kit Cat Cove";

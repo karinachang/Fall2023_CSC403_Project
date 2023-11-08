@@ -12,7 +12,8 @@ namespace Fall2020_CSC403_Project {
 		private Enemy bossHersheys;
 		private Enemy enemyKitkat;
 		private Character[] walls;
-		private DateTime timeBegin;
+        private Character door;
+        private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
 		private FrmBattle frmBattle;
@@ -73,7 +74,9 @@ namespace Fall2020_CSC403_Project {
 				walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
 			}
 
-			Game.player = player;
+            door = new Character(CreatePosition(picDoor), CreateCollider(picDoor, PADDING));
+
+            Game.player = player;
 
 			// handling timer
 			timeBegin = DateTime.Now;
@@ -110,8 +113,11 @@ namespace Fall2020_CSC403_Project {
 			string time = span.ToString(@"hh\:mm\:ss");
 			lblInGameTime.Text = "Time: " + time.ToString();
 		}
-
-		private void tmrPlayerMove_Tick(object sender, EventArgs e) {
+        private void SwitchLevel()
+        {
+            //ETHAN
+        }
+        private void tmrPlayerMove_Tick(object sender, EventArgs e) {
 			if (isPaused)
 				return; // Skip moving if the game is paused
 
@@ -121,9 +127,17 @@ namespace Fall2020_CSC403_Project {
 			// check collision with walls
 			if (HitAWall(player))
 				player.MoveBack();
-
-			// check collision with enemies
-			if (HitAChar(player, enemyReeses) && enemyReeses.Health > 0) {
+            // check collision with door
+            if (HitADoor(player) && enemyReeses.Health < 0)
+            {
+                SwitchLevel();
+            }
+            else if (HitADoor(player))
+            {
+                player.MoveBack();
+            }
+            // check collision with enemies
+            if (HitAChar(player, enemyReeses) && enemyReeses.Health > 0) {
 				Fight(enemyReeses);
 				picEnemyReeses.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
@@ -150,8 +164,12 @@ namespace Fall2020_CSC403_Project {
 			}
 			return hitAWall;
 		}
+        private bool HitADoor(Character c)
+        {
+            return c.Collider.Intersects(door.Collider);
+        }
 
-		private bool HitAChar(Character you, Character other) {
+        private bool HitAChar(Character you, Character other) {
 			return you.Collider.Intersects(other.Collider);
 		}
 
