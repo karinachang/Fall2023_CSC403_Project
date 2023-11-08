@@ -122,7 +122,7 @@ namespace Fall2020_CSC403_Project
 		private void restoreHealth()
 		{
 			int currentHealth = player.Health;
-			int healthToAdd = 20 - currentHealth;
+			int healthToAdd = 15 - currentHealth;
 			player.AlterHealth(healthToAdd);
 		}
 

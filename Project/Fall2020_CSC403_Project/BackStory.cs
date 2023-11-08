@@ -16,7 +16,7 @@ namespace Fall2020_CSC403_Project
 		private void StartCutScene()
 		{
             // starts the cut scene for level 1
-            CutScene2 cutScene  = new CutScene2();
+            CutScene cutScene  = new CutScene();
             cutScene.Size = new Size(800, 450);
 			this.Hide();
             cutScene.ShowDialog();
