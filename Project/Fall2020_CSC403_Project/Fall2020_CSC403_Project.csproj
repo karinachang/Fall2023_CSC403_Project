@@ -236,5 +236,8 @@
   <ItemGroup>
     <None Include="data\enemy_kitkat9.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\kitcatcove.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

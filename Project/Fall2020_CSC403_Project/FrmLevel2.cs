@@ -14,6 +14,10 @@ namespace Fall2020_CSC403_Project {
 		private Enemy enemyKitkat3;
 		private Enemy enemyKitkat4;
 		private Enemy enemyKitkat5;
+		private Enemy enemyKitkat6;
+		private Enemy enemyKitkat7;
+		private Enemy enemyKitkat8;
+		private Enemy enemyKitkat9;
 		private Character[] walls;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
@@ -35,6 +39,10 @@ namespace Fall2020_CSC403_Project {
 			enemyKitkat3 = new Enemy(CreatePosition(picEnemyKitkat3), CreateCollider(picEnemyKitkat3, PADDING));
 			enemyKitkat4 = new Enemy(CreatePosition(picEnemyKitkat4), CreateCollider(picEnemyKitkat4, PADDING));
 			enemyKitkat5 = new Enemy(CreatePosition(picEnemyKitkat5), CreateCollider(picEnemyKitkat5, PADDING));
+			enemyKitkat6 = new Enemy(CreatePosition(picEnemyKitkat6), CreateCollider(picEnemyKitkat6, PADDING));
+			enemyKitkat7 = new Enemy(CreatePosition(picEnemyKitkat7), CreateCollider(picEnemyKitkat7, PADDING));
+			enemyKitkat8 = new Enemy(CreatePosition(picEnemyKitkat8), CreateCollider(picEnemyKitkat8, PADDING));
+			enemyKitkat9 = new Enemy(CreatePosition(picEnemyKitkat9), CreateCollider(picEnemyKitkat9, PADDING));
 
 
 			enemyKitkat.Img = picEnemyKitkat.BackgroundImage;
@@ -43,6 +51,10 @@ namespace Fall2020_CSC403_Project {
             enemyKitkat3.Img = picEnemyKitkat3.BackgroundImage;
             enemyKitkat4.Img = picEnemyKitkat4.BackgroundImage;
             enemyKitkat5.Img = picEnemyKitkat5.BackgroundImage;
+            enemyKitkat6.Img = picEnemyKitkat6.BackgroundImage;
+            enemyKitkat7.Img = picEnemyKitkat7.BackgroundImage;
+            enemyKitkat8.Img = picEnemyKitkat8.BackgroundImage;
+            enemyKitkat9.Img = picEnemyKitkat9.BackgroundImage;
 
 			enemyKitkat.Color = Color.FromArgb(255, 245, 161);
 			enemyKitkat1.Color = Color.Blue;
@@ -50,6 +62,10 @@ namespace Fall2020_CSC403_Project {
 			enemyKitkat3.Color = Color.Red;
 			enemyKitkat4.Color = Color.Red;
 			enemyKitkat5.Color = Color.Red;
+			enemyKitkat6.Color = Color.Red;
+			enemyKitkat7.Color = Color.Red;
+			enemyKitkat8.Color = Color.Red;
+			enemyKitkat9.Color = Color.Red;
 
 			walls = new Character[NUM_WALLS];
 			for (int w = 0; w < NUM_WALLS; w++) {
@@ -119,6 +135,22 @@ namespace Fall2020_CSC403_Project {
 			else if (HitAChar(player, enemyKitkat5) && enemyKitkat5.Health > 0) {
 				Fight(enemyKitkat5);
 				picEnemyKitkat5.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if (HitAChar(player, enemyKitkat6) && enemyKitkat6.Health > 0) {
+				Fight(enemyKitkat6);
+				picEnemyKitkat6.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if (HitAChar(player, enemyKitkat7) && enemyKitkat7.Health > 0) {
+				Fight(enemyKitkat7);
+				picEnemyKitkat7.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if (HitAChar(player, enemyKitkat8) && enemyKitkat8.Health > 0) {
+				Fight(enemyKitkat8);
+				picEnemyKitkat8.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if (HitAChar(player, enemyKitkat9) && enemyKitkat9.Health > 0) {
+				Fight(enemyKitkat9);
+				picEnemyKitkat9.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 
 			// update player's picture box
