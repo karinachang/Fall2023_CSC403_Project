@@ -86,14 +86,11 @@ namespace Fall2020_CSC403_Project {
             UpdateHealthBar();
         }
 
-		private void UpdateHealthBar()
-		{
+		private void UpdateHealthBar() {
 			float healthPercentage = (float)player.Health / player.MaxHealth;
 			healthBar.Width = (int)(healthPercentage * healthBarBackground.Width);
 			lblHealthValue.Text = player.Health.ToString();
 		}
-
-
 
 		private Vector2 CreatePosition(PictureBox pic) {
 			return new Vector2(pic.Location.X, pic.Location.Y);
@@ -113,9 +110,15 @@ namespace Fall2020_CSC403_Project {
 			string time = span.ToString(@"hh\:mm\:ss");
 			lblInGameTime.Text = "Time: " + time.ToString();
 		}
-        private void SwitchLevel()
-        {
-            //ETHAN
+        private void SwitchLevel() {
+            // starts the cut scene for level 2
+            CutScene2 cutScene2 = new CutScene2();
+            cutScene2.Size = new Size(800, 450);
+            this.Hide();
+            cutScene2.ShowDialog();
+
+            // control returned here
+            this.Close();
         }
         private void tmrPlayerMove_Tick(object sender, EventArgs e) {
 			if (isPaused)
@@ -127,15 +130,13 @@ namespace Fall2020_CSC403_Project {
 			// check collision with walls
 			if (HitAWall(player))
 				player.MoveBack();
-            // check collision with door
-            if (HitADoor(player) && enemyReeses.Health < 0)
-            {
-                SwitchLevel();
-            }
-            else if (HitADoor(player))
-            {
+			// check collision with door
+			if (HitADoor(player)) {
+                player.ResetMoveSpeed();
                 player.MoveBack();
-            }
+                if (enemyReeses.Health < 0)
+					SwitchLevel();
+			}
             // check collision with enemies
             if (HitAChar(player, enemyReeses) && enemyReeses.Health > 0) {
 				Fight(enemyReeses);

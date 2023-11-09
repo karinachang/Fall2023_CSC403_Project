@@ -26,40 +26,14 @@ namespace Fall2020_CSC403_Project {
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
 		private FrmBattle frmBattle;
-        private PictureBox healthBarBackground;
-        private PictureBox healthBar;
-        private Label lblHealthValue;
+		private PictureBox healthBarBackground;
+		private PictureBox healthBar;
+		private Label lblHealthValue;
+		private Enemy kitKatWithKey;
 
-        private void InitializeHealthBar()
-        {
-            // Initialize Health Bar Background
-            healthBarBackground = new PictureBox();
-            healthBarBackground.Size = new Size(200, 25);
-            healthBarBackground.Location = new Point(10, this.ClientSize.Height - healthBarBackground.Height - 10);
-            healthBarBackground.BackColor = Color.Gray;
-            this.Controls.Add(healthBarBackground);
-
-            // Initialize Actual Health Bar
-            healthBar = new PictureBox();
-            healthBar.Size = new Size(200, 25);
-            healthBar.Location = new Point(10, this.ClientSize.Height - healthBar.Height - 10);
-            healthBar.BackColor = Color.Green;
-            this.Controls.Add(healthBar);
-            healthBar.BringToFront();
-
-            // Initialize Health Value Label
-            lblHealthValue = new Label();
-            lblHealthValue.Size = new Size(50, 25);
-            lblHealthValue.Location = new Point(healthBarBackground.Right + 10, healthBarBackground.Top);
-            lblHealthValue.ForeColor = Color.Black;
-            lblHealthValue.Text = player.Health.ToString();
-            this.Controls.Add(lblHealthValue);
-            lblHealthValue.BringToFront();
-        }
-
-        public FrmLevel2() {
+		public FrmLevel2() {
 			InitializeComponent();
-        }
+		}
 
 		private void FrmLevel2_Load(object sender, EventArgs e) {
 			const int PADDING = 7;
@@ -67,7 +41,7 @@ namespace Fall2020_CSC403_Project {
 
 			player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
 			enemyKitkat = new Enemy(CreatePosition(picEnemyKitkat), CreateCollider(picEnemyKitkat, PADDING));
-            enemyKitkat1 = new Enemy(CreatePosition(picEnemyKitkat1), CreateCollider(picEnemyKitkat1, PADDING));
+			enemyKitkat1 = new Enemy(CreatePosition(picEnemyKitkat1), CreateCollider(picEnemyKitkat1, PADDING));
 			enemyKitkat2 = new Enemy(CreatePosition(picEnemyKitkat2), CreateCollider(picEnemyKitkat2, PADDING));
 			enemyKitkat3 = new Enemy(CreatePosition(picEnemyKitkat3), CreateCollider(picEnemyKitkat3, PADDING));
 			enemyKitkat4 = new Enemy(CreatePosition(picEnemyKitkat4), CreateCollider(picEnemyKitkat4, PADDING));
@@ -77,17 +51,16 @@ namespace Fall2020_CSC403_Project {
 			enemyKitkat8 = new Enemy(CreatePosition(picEnemyKitkat8), CreateCollider(picEnemyKitkat8, PADDING));
 			enemyKitkat9 = new Enemy(CreatePosition(picEnemyKitkat9), CreateCollider(picEnemyKitkat9, PADDING));
 
-
 			enemyKitkat.Img = picEnemyKitkat.BackgroundImage;
 			enemyKitkat1.Img = picEnemyKitkat1.BackgroundImage;
 			enemyKitkat2.Img = picEnemyKitkat2.BackgroundImage;
-            enemyKitkat3.Img = picEnemyKitkat3.BackgroundImage;
-            enemyKitkat4.Img = picEnemyKitkat4.BackgroundImage;
-            enemyKitkat5.Img = picEnemyKitkat5.BackgroundImage;
-            enemyKitkat6.Img = picEnemyKitkat6.BackgroundImage;
-            enemyKitkat7.Img = picEnemyKitkat7.BackgroundImage;
-            enemyKitkat8.Img = picEnemyKitkat8.BackgroundImage;
-            enemyKitkat9.Img = picEnemyKitkat9.BackgroundImage;
+			enemyKitkat3.Img = picEnemyKitkat3.BackgroundImage;
+			enemyKitkat4.Img = picEnemyKitkat4.BackgroundImage;
+			enemyKitkat5.Img = picEnemyKitkat5.BackgroundImage;
+			enemyKitkat6.Img = picEnemyKitkat6.BackgroundImage;
+			enemyKitkat7.Img = picEnemyKitkat7.BackgroundImage;
+			enemyKitkat8.Img = picEnemyKitkat8.BackgroundImage;
+			enemyKitkat9.Img = picEnemyKitkat9.BackgroundImage;
 
 			enemyKitkat.Color = Color.FromArgb(255, 245, 161);
 			enemyKitkat1.Color = Color.Blue;
@@ -99,6 +72,12 @@ namespace Fall2020_CSC403_Project {
 			enemyKitkat7.Color = Color.Red;
 			enemyKitkat8.Color = Color.Red;
 			enemyKitkat9.Color = Color.Red;
+
+			// give random kit kat the key to the door
+			Enemy[] allEnemies = new Enemy[] {enemyKitkat, enemyKitkat1, enemyKitkat2, enemyKitkat3,
+				enemyKitkat4, enemyKitkat5, enemyKitkat6, enemyKitkat7, enemyKitkat8, enemyKitkat9};
+			Random random = new Random();
+			kitKatWithKey = allEnemies[random.Next(0, allEnemies.Length)];
 
 			walls = new Character[NUM_WALLS];
 			for (int w = 0; w < NUM_WALLS; w++) {
@@ -114,23 +93,47 @@ namespace Fall2020_CSC403_Project {
 			timeBegin = DateTime.Now;
 			totalTimePaused = new TimeSpan(0, 0, 0, 0, 0);
 
-            // handling timer
-            timeBegin = DateTime.Now;
-            totalTimePaused = new TimeSpan(0, 0, 0, 0, 0);
-            InitializeHealthBar();
-            // Update the health bar with the initial value
-            UpdateHealthBar();
-        }
+			// handling timer
+			timeBegin = DateTime.Now;
+			totalTimePaused = new TimeSpan(0, 0, 0, 0, 0);
+			InitializeHealthBar();
+			// Update the health bar with the initial value
+			UpdateHealthBar();
+		}
 
+		private void InitializeHealthBar() {
+			// Initialize Health Bar Background
+			healthBarBackground = new PictureBox();
+			healthBarBackground.Size = new Size(200, 25);
+			healthBarBackground.Location = new Point(10, this.ClientSize.Height - healthBarBackground.Height - 10);
+			healthBarBackground.BackColor = Color.Gray;
+			this.Controls.Add(healthBarBackground);
 
-        private void UpdateHealthBar()
-        {
-            float healthPercentage = (float)player.Health / player.MaxHealth;
-            healthBar.Width = (int)(healthPercentage * healthBarBackground.Width);
-            lblHealthValue.Text = player.Health.ToString();
-        }
+			// Initialize Actual Health Bar
+			healthBar = new PictureBox();
+			healthBar.Size = new Size(200, 25);
+			healthBar.Location = new Point(10, this.ClientSize.Height - healthBar.Height - 10);
+			healthBar.BackColor = Color.Green;
+			this.Controls.Add(healthBar);
+			healthBar.BringToFront();
 
-        private Vector2 CreatePosition(PictureBox pic) {
+			// Initialize Health Value Label
+			lblHealthValue = new Label();
+			lblHealthValue.Size = new Size(50, 25);
+			lblHealthValue.Location = new Point(healthBarBackground.Right + 10, healthBarBackground.Top);
+			lblHealthValue.ForeColor = Color.Black;
+			lblHealthValue.Text = player.Health.ToString();
+			this.Controls.Add(lblHealthValue);
+			lblHealthValue.BringToFront();
+		}
+
+		private void UpdateHealthBar() {
+			float healthPercentage = (float)player.Health / player.MaxHealth;
+			healthBar.Width = (int)(healthPercentage * healthBarBackground.Width);
+			lblHealthValue.Text = player.Health.ToString();
+		}
+
+		private Vector2 CreatePosition(PictureBox pic) {
 			return new Vector2(pic.Location.X, pic.Location.Y);
 		}
 
@@ -149,9 +152,15 @@ namespace Fall2020_CSC403_Project {
 			lblInGameTime.Text = "Time: " + time.ToString();
 		}
 
-		private void SwitchLevel()
-		{
-			//ETHAN
+		private void SwitchLevel() {
+			// starts the cut scene for level 3
+			CutScene3 cutScene3 = new CutScene3();
+			cutScene3.Size = new Size(800, 450);
+			this.Hide();
+			cutScene3.ShowDialog();
+
+			// control returned here
+			this.Close();
 		}
 
 		private void tmrPlayerMove_Tick(object sender, EventArgs e) {
@@ -165,27 +174,29 @@ namespace Fall2020_CSC403_Project {
 			if (HitAWall(player))
 				player.MoveBack();
 			// check collision with door
-			if (HitADoor(player) && enemyKitkat6.Health<0){
-				SwitchLevel();
+			// check collision with door
+			if (HitADoor(player)) {
+				player.ResetMoveSpeed();
+				player.MoveBack();
+				// you must have killed the kit kat with the key to open the door
+				if (kitKatWithKey.Health < 0)
+					SwitchLevel();
 			}
-			else if (HitADoor(player)){
-                player.MoveBack();
-            }
 			// check collision with enemies
 			if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
 				Fight(enemyKitkat);
 				picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
-            else if (HitAChar(player, enemyKitkat1) && enemyKitkat1.Health > 0)
-            {
-                Fight(enemyKitkat1);
-                picEnemyKitkat1.BackgroundImage = picEnemyDead.BackgroundImage;
-            }
+			else if (HitAChar(player, enemyKitkat1) && enemyKitkat1.Health > 0)
+			{
+				Fight(enemyKitkat1);
+				picEnemyKitkat1.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
 			else if (HitAChar(player, enemyKitkat2) && enemyKitkat2.Health > 0) {
 				Fight(enemyKitkat2);
 				picEnemyKitkat2.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
-            else if (HitAChar(player, enemyKitkat3) && enemyKitkat3.Health > 0) {
+			else if (HitAChar(player, enemyKitkat3) && enemyKitkat3.Health > 0) {
 				Fight(enemyKitkat3);
 				picEnemyKitkat3.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
@@ -237,16 +248,16 @@ namespace Fall2020_CSC403_Project {
 			return you.Collider.Intersects(other.Collider);
 		}
 
-        private void Fight(Enemy enemy)
-        {
-            player.ResetMoveSpeed();
-            player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy);
-            frmBattle.ShowDialog(); // Make the battle form modal
-            UpdateHealthBar(); // Update health bar after the battle
-        }
+		private void Fight(Enemy enemy)
+		{
+			player.ResetMoveSpeed();
+			player.MoveBack();
+			frmBattle = FrmBattle.GetInstance(enemy);
+			frmBattle.ShowDialog(); // Make the battle form modal
+			UpdateHealthBar(); // Update health bar after the battle
+		}
 
-        private Bitmap BlurImage(Bitmap image)
+		private Bitmap BlurImage(Bitmap image)
 		{
 			float blurValue = 5.0f;
 			Bitmap result = new Bitmap(image.Width, image.Height);

@@ -18,16 +18,7 @@ namespace Fall2020_CSC403_Project
 
 		private void StartGame(object sender, EventArgs e)
 		{
-            // starts the level, when level window is closed this returns control to here to then close the menu
-            // COMMENT OUT ALL LEVELS/BACKSTORY EXCEPT THE ONE YOU WANT TO TEST/RUN
-            // FrmLevel level = new FrmLevel();
-            // FrmLevel2 level  = new FrmLevel2();
-            // FrmLevel3 level = new FrmLevel3();
-			/*
-            level.Size = new Size(1160, 740);
-            this.Hide();
-            level.ShowDialog();
-			*/
+            // go to backstory
             BackStory backStory = new BackStory();
             backStory.Size = new Size(800, 450);
 			this.Hide();
