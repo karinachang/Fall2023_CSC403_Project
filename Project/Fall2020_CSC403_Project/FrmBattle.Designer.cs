@@ -47,11 +47,11 @@ namespace Fall2020_CSC403_Project {
             // 
             this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttack.Location = new System.Drawing.Point(695, 781);
-            this.btnAttack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAttack.Margin = new System.Windows.Forms.Padding(6);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(256, 83);
             this.btnAttack.TabIndex = 2;
-            this.btnAttack.Text = "Attack 🤺";
+            this.btnAttack.Text = "Attack 👊🏻";
             this.btnAttack.UseVisualStyleBackColor = true;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
@@ -59,11 +59,11 @@ namespace Fall2020_CSC403_Project {
             // 
             this.btnRock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRock.Location = new System.Drawing.Point(252, 944);
-            this.btnRock.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRock.Margin = new System.Windows.Forms.Padding(6);
             this.btnRock.Name = "btnRock";
             this.btnRock.Size = new System.Drawing.Size(256, 83);
             this.btnRock.TabIndex = 2;
-            this.btnRock.Text = "Rock 🪨";
+            this.btnRock.Text = "Rock 🤜🏻";
             this.btnRock.UseVisualStyleBackColor = true;
             this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
             // 
@@ -71,11 +71,11 @@ namespace Fall2020_CSC403_Project {
             // 
             this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaper.Location = new System.Drawing.Point(695, 944);
-            this.btnPaper.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnPaper.Margin = new System.Windows.Forms.Padding(6);
             this.btnPaper.Name = "btnPaper";
             this.btnPaper.Size = new System.Drawing.Size(256, 83);
             this.btnPaper.TabIndex = 2;
-            this.btnPaper.Text = "Paper 📄";
+            this.btnPaper.Text = "Paper 🫱🏻";
             this.btnPaper.UseVisualStyleBackColor = true;
             this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
             // 
@@ -83,7 +83,7 @@ namespace Fall2020_CSC403_Project {
             // 
             this.btnScissors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScissors.Location = new System.Drawing.Point(1146, 944);
-            this.btnScissors.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnScissors.Margin = new System.Windows.Forms.Padding(6);
             this.btnScissors.Name = "btnScissors";
             this.btnScissors.Size = new System.Drawing.Size(256, 83);
             this.btnScissors.TabIndex = 2;
@@ -138,7 +138,7 @@ namespace Fall2020_CSC403_Project {
             this.picBossBattle.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen;
             this.picBossBattle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBossBattle.Location = new System.Drawing.Point(1560, 1083);
-            this.picBossBattle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.picBossBattle.Margin = new System.Windows.Forms.Padding(6);
             this.picBossBattle.Name = "picBossBattle";
             this.picBossBattle.Size = new System.Drawing.Size(60, 53);
             this.picBossBattle.TabIndex = 7;
@@ -152,7 +152,7 @@ namespace Fall2020_CSC403_Project {
             this.picEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemy.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picEnemy.Location = new System.Drawing.Point(1030, 189);
-            this.picEnemy.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.picEnemy.Margin = new System.Windows.Forms.Padding(6);
             this.picEnemy.Name = "picEnemy";
             this.picEnemy.Size = new System.Drawing.Size(454, 510);
             this.picEnemy.TabIndex = 1;
@@ -166,7 +166,7 @@ namespace Fall2020_CSC403_Project {
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picPlayer.Location = new System.Drawing.Point(140, 189);
-            this.picPlayer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.picPlayer.Margin = new System.Windows.Forms.Padding(6);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(454, 510);
             this.picPlayer.TabIndex = 0;
@@ -196,7 +196,7 @@ namespace Fall2020_CSC403_Project {
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmBattle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Fight!";
