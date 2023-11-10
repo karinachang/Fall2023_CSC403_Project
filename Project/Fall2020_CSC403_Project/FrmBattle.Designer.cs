@@ -28,16 +28,16 @@ namespace Fall2020_CSC403_Project {
             this.components = new System.ComponentModel.Container();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnRock = new System.Windows.Forms.Button();
-            this.btnPaper = new System.Windows.Forms.Button();
             this.btnScissors = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEnemyHealthFull = new System.Windows.Forms.Label();
+            this.tmrFinalBattle = new System.Windows.Forms.Timer(this.components);
             this.picBossBattle = new System.Windows.Forms.PictureBox();
+            this.btnPaper = new System.Windows.Forms.Button();
             this.picEnemy = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.tmrFinalBattle = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -46,48 +46,36 @@ namespace Fall2020_CSC403_Project {
             // btnAttack
             // 
             this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttack.Location = new System.Drawing.Point(695, 781);
+            this.btnAttack.Location = new System.Drawing.Point(671, 709);
             this.btnAttack.Margin = new System.Windows.Forms.Padding(6);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(256, 83);
+            this.btnAttack.Size = new System.Drawing.Size(279, 83);
             this.btnAttack.TabIndex = 2;
-            this.btnAttack.Text = "Attack 👊🏻";
+            this.btnAttack.Text = "Random Fight";
             this.btnAttack.UseVisualStyleBackColor = true;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // btnRock
             // 
             this.btnRock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRock.Location = new System.Drawing.Point(252, 944);
+            this.btnRock.Image = global::Fall2020_CSC403_Project.Properties.Resources.rock;
+            this.btnRock.Location = new System.Drawing.Point(488, 814);
             this.btnRock.Margin = new System.Windows.Forms.Padding(6);
             this.btnRock.Name = "btnRock";
-            this.btnRock.Size = new System.Drawing.Size(256, 83);
+            this.btnRock.Size = new System.Drawing.Size(196, 281);
             this.btnRock.TabIndex = 2;
-            this.btnRock.Text = "Rock 🤜🏻";
             this.btnRock.UseVisualStyleBackColor = true;
             this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
-            // 
-            // btnPaper
-            // 
-            this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPaper.Location = new System.Drawing.Point(695, 944);
-            this.btnPaper.Margin = new System.Windows.Forms.Padding(6);
-            this.btnPaper.Name = "btnPaper";
-            this.btnPaper.Size = new System.Drawing.Size(256, 83);
-            this.btnPaper.TabIndex = 2;
-            this.btnPaper.Text = "Paper 🫱🏻";
-            this.btnPaper.UseVisualStyleBackColor = true;
-            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
             // 
             // btnScissors
             // 
             this.btnScissors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScissors.Location = new System.Drawing.Point(1146, 944);
+            this.btnScissors.Image = global::Fall2020_CSC403_Project.Properties.Resources.scissor;
+            this.btnScissors.Location = new System.Drawing.Point(922, 814);
             this.btnScissors.Margin = new System.Windows.Forms.Padding(6);
             this.btnScissors.Name = "btnScissors";
-            this.btnScissors.Size = new System.Drawing.Size(256, 83);
+            this.btnScissors.Size = new System.Drawing.Size(196, 281);
             this.btnScissors.TabIndex = 2;
-            this.btnScissors.Text = "Scissors ✄";
             this.btnScissors.UseVisualStyleBackColor = true;
             this.btnScissors.Click += new System.EventHandler(this.btnScissors_Click);
             // 
@@ -133,6 +121,11 @@ namespace Fall2020_CSC403_Project {
             this.lblEnemyHealthFull.Size = new System.Drawing.Size(452, 39);
             this.lblEnemyHealthFull.TabIndex = 6;
             // 
+            // tmrFinalBattle
+            // 
+            this.tmrFinalBattle.Interval = 5600;
+            this.tmrFinalBattle.Tick += new System.EventHandler(this.tmrFinalBattle_Tick);
+            // 
             // picBossBattle
             // 
             this.picBossBattle.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen;
@@ -144,6 +137,18 @@ namespace Fall2020_CSC403_Project {
             this.picBossBattle.TabIndex = 7;
             this.picBossBattle.TabStop = false;
             this.picBossBattle.Visible = false;
+            // 
+            // btnPaper
+            // 
+            this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaper.Image = global::Fall2020_CSC403_Project.Properties.Resources.paper;
+            this.btnPaper.Location = new System.Drawing.Point(705, 814);
+            this.btnPaper.Margin = new System.Windows.Forms.Padding(6);
+            this.btnPaper.Name = "btnPaper";
+            this.btnPaper.Size = new System.Drawing.Size(196, 281);
+            this.btnPaper.TabIndex = 2;
+            this.btnPaper.UseVisualStyleBackColor = true;
+            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
             // 
             // picEnemy
             // 
@@ -171,11 +176,6 @@ namespace Fall2020_CSC403_Project {
             this.picPlayer.Size = new System.Drawing.Size(454, 510);
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            // 
-            // tmrFinalBattle
-            // 
-            this.tmrFinalBattle.Interval = 5600;
-            this.tmrFinalBattle.Tick += new System.EventHandler(this.tmrFinalBattle_Tick);
             // 
             // FrmBattle
             // 

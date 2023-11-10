@@ -263,5 +263,14 @@
   <ItemGroup>
     <None Include="data\reesesroost.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\scissor.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
