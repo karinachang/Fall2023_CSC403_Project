@@ -74,6 +74,7 @@ namespace Fall2020_CSC403_Project {
             // 
             this.btnScissors.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.scissor;
             this.btnScissors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnScissors.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnScissors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScissors.Location = new System.Drawing.Point(615, 521);
             this.btnScissors.Margin = new System.Windows.Forms.Padding(4);
@@ -146,6 +147,7 @@ namespace Fall2020_CSC403_Project {
             // 
             this.btnPaper.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.paper;
             this.btnPaper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPaper.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaper.Location = new System.Drawing.Point(470, 521);
             this.btnPaper.Margin = new System.Windows.Forms.Padding(4);
