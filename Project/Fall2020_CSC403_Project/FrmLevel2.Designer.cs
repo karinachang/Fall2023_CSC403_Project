@@ -329,7 +329,6 @@
             this.picEnemyKitkat2.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyKitkat2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat2;
             this.picEnemyKitkat2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyKitkat2.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
             this.picEnemyKitkat2.Location = new System.Drawing.Point(192, 559);
             this.picEnemyKitkat2.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat2.Name = "picEnemyKitkat2";

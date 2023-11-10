@@ -239,5 +239,29 @@
   <ItemGroup>
     <None Include="data\kitcatcove.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_reeses6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\reesesroost.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
