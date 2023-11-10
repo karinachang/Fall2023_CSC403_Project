@@ -174,7 +174,6 @@ namespace Fall2020_CSC403_Project {
 			if (HitAWall(player))
 				player.MoveBack();
 			// check collision with door
-			// check collision with door
 			if (HitADoor(player)) {
 				player.ResetMoveSpeed();
 				player.MoveBack();
