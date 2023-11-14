@@ -45,11 +45,20 @@ namespace Fall2020_CSC403_Project {
             lblHealthValue.BringToFront();
         }
 
-        public FrmLevel3() {
-			InitializeComponent();
+        private SoundPlayer song = new SoundPlayer(Properties.Resources.boss);
+        private SoundPlayer mute = new SoundPlayer(Properties.Resources.mute);
+        public FrmLevel3()
+
+        {
+            InitializeComponent();
+            // Check the global mute state before playing the song
+            if (!GlobalMuteState.IsMuted)
+            {
+                song.PlayLooping();
+            }
         }
 
-		private void FrmLevel3_Load(object sender, EventArgs e) {
+        private void FrmLevel3_Load(object sender, EventArgs e) {
 			const int PADDING = 7;
 			const int NUM_WALLS = 13;
 
@@ -193,67 +202,97 @@ namespace Fall2020_CSC403_Project {
 			blurOverlay.BringToFront();
 		}
 
-		private void AddPauseButtons() {
-			// Create Exit button
-			Button btnExit = new Button();
-			btnExit.Text = "Exit";
-			btnExit.Size = new Size(100, 50);
-			btnExit.Location = new Point(this.Width / 2 - btnExit.Width - 30, this.Height / 2); // Centered
-			btnExit.Font = new Font("Arial", 12, FontStyle.Bold);  // Change the font style
-			btnExit.BackColor = Color.LightCoral; // Change the background color
-			btnExit.ForeColor = Color.White;  // Change the text color
-			btnExit.Click += (s, e) => { Application.Exit(); }; // Close the program when clicked
-			btnExit.Name = "btnExit";
-			this.Controls.Add(btnExit);
-			btnExit.BringToFront();
+        private void AddPauseButtons()
+        {
+            // Create Exit button
+            Button btnExit = new Button();
+            btnExit.Text = "Exit";
+            btnExit.Size = new Size(100, 50);
+            btnExit.Location = new Point(this.Width / 2 - btnExit.Width - 30, this.Height / 2); // Centered
+            btnExit.Font = new Font("Arial", 12, FontStyle.Bold);  // Change the font style
+            btnExit.BackColor = Color.LightCoral; // Change the background color
+            btnExit.ForeColor = Color.White;  // Change the text color
+            btnExit.Click += (s, e) => { Application.Exit(); }; // Close the program when clicked
+            btnExit.Name = "btnExit";
+            this.Controls.Add(btnExit);
+            btnExit.BringToFront();
 
-			// Create Main menu button
-			Button btnRestart = new Button();
-			btnRestart.Text = "Main Menu";
-			btnRestart.Size = new Size(100, 50);
-			btnRestart.Location = new Point(this.Width / 2 + 30, this.Height / 2); // Centered
-			btnRestart.Font = new Font("Arial", 12, FontStyle.Bold);  // Change the font style
-			btnRestart.BackColor = Color.LightGreen; // Change the background color
-			btnRestart.ForeColor = Color.White;  // Change the text color
-			btnRestart.Click += (s, e) => { Application.Restart(); }; // Restart the program when clicked
-			btnRestart.Name = "btnRestart";
-			this.Controls.Add(btnRestart);
-			btnRestart.BringToFront();
+            // Create Main menu button
+            Button btnRestart = new Button();
+            btnRestart.Text = "Main Menu";
+            btnRestart.Size = new Size(100, 50);
+            btnRestart.Location = new Point(this.Width / 2 + 30, this.Height / 2); // Centered
+            btnRestart.Font = new Font("Arial", 12, FontStyle.Bold);  // Change the font style
+            btnRestart.BackColor = Color.LightGreen; // Change the background color
+            btnRestart.ForeColor = Color.White;  // Change the text color
+            btnRestart.Click += (s, e) => { Application.Restart(); }; // Restart the program when clicked
+            btnRestart.Name = "btnRestart";
+            this.Controls.Add(btnRestart);
+            btnRestart.BringToFront();
 
-			// Create Game Paused label
-			Label lblPaused = new Label();
-			lblPaused.Text = "Paused";
-			lblPaused.Size = new Size(300, 70);  // Increased size
-			lblPaused.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 150);  // Centered
-			lblPaused.Font = new Font("Verdana", 28, FontStyle.Bold);  // Changed font and size
-			lblPaused.ForeColor = Color.Gold;  // Changed text color
-			lblPaused.BackColor = Color.Transparent;  // Made background transparent
-			lblPaused.Name = "lblPaused";
-			lblPaused.TextAlign = ContentAlignment.MiddleCenter;
-			this.Controls.Add(lblPaused);
-			lblPaused.BringToFront();
+            // Create Game Paused label
+            Label lblPaused = new Label();
+            lblPaused.Text = "Paused";
+            lblPaused.Size = new Size(300, 70);  // Increased size
+            lblPaused.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 150);  // Centered
+            lblPaused.Font = new Font("Verdana", 28, FontStyle.Bold);  // Changed font and size
+            lblPaused.ForeColor = Color.Gold;  // Changed text color
+            lblPaused.BackColor = Color.Transparent;  // Made background transparent
+            lblPaused.Name = "lblPaused";
+            lblPaused.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(lblPaused);
+            lblPaused.BringToFront();
 
-			// Updated flashing Press ESC label
-			Label lblPressEsc = new Label();
-			lblPressEsc.Text = "Press 'ESC' key to Resume";
-			lblPressEsc.Size = new Size(300, 20);  // Increased size
-			lblPressEsc.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 50);  // Centered
-			lblPressEsc.Font = new Font("Verdana", 8, FontStyle.Italic);  // Changed font and size
-			lblPressEsc.ForeColor = Color.LightGray;  // Changed text color
-			lblPressEsc.BackColor = Color.Transparent;  // Made background transparent
-			lblPressEsc.Name = "lblPressEsc";
-			lblPressEsc.TextAlign = ContentAlignment.MiddleCenter;
-			this.Controls.Add(lblPressEsc);
-			lblPressEsc.BringToFront();
+            // Updated flashing Press ESC label
+            Label lblPressEsc = new Label();
+            lblPressEsc.Text = "Press 'ESC' key to Resume";
+            lblPressEsc.Size = new Size(300, 20);  // Increased size
+            lblPressEsc.Location = new Point(this.Width / 2 - 150, this.Height / 2 - 50);  // Centered
+            lblPressEsc.Font = new Font("Verdana", 8, FontStyle.Italic);  // Changed font and size
+            lblPressEsc.ForeColor = Color.LightGray;  // Changed text color
+            lblPressEsc.BackColor = Color.Transparent;  // Made background transparent
+            lblPressEsc.Name = "lblPressEsc";
+            lblPressEsc.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(lblPressEsc);
+            lblPressEsc.BringToFront();
 
-			// Timer for flashing text (same as before)
-			Timer flashTimer = new Timer();
-			flashTimer.Interval = 500; // half a second
-			flashTimer.Tick += (s, e) => { lblPressEsc.Visible = !lblPressEsc.Visible; };
-			flashTimer.Start();
-		}
+            // Create Mute/Unmute button
+            Button btnMuteUnmute = new Button();
+            btnMuteUnmute.Text = GlobalMuteState.IsMuted ? "Unmute" : "Mute"; // Set the text based on the mute state
+            btnMuteUnmute.Size = new Size(100, 50);
+            btnMuteUnmute.Location = new Point(this.Width / 2 - 50, this.Height / 2 + 80); // Adjust the position as needed
+            btnMuteUnmute.Font = new Font("Arial", 12, FontStyle.Bold);  // Change the font style
+            btnMuteUnmute.BackColor = Color.Red; // Change the background color
+            btnMuteUnmute.ForeColor = Color.White;  // Change the text color
+            btnMuteUnmute.Name = "btnMuteUnmute";
+            btnMuteUnmute.Click += (s, e) => {
+                // Toggle the mute state
+                GlobalMuteState.IsMuted = !GlobalMuteState.IsMuted;
+                // Update the text of the button
+                btnMuteUnmute.Text = GlobalMuteState.IsMuted ? "Unmute" : "Mute";
 
-		protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
+                // If muted, stop the sound, otherwise resume playing
+                if (GlobalMuteState.IsMuted)
+                {
+                    mute.PlayLooping();
+                }
+                else
+                {
+                    song.PlayLooping();
+                }
+            };
+            btnMuteUnmute.Name = "btnMuteUnmute";
+            this.Controls.Add(btnMuteUnmute);
+            btnMuteUnmute.BringToFront();
+
+            // Timer for flashing text (same as before)
+            Timer flashTimer = new Timer();
+            flashTimer.Interval = 500; // half a second
+            flashTimer.Tick += (s, e) => { lblPressEsc.Visible = !lblPressEsc.Visible; };
+            flashTimer.Start();
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
 			if (keyData == Keys.Escape) {
 				isPaused = !isPaused; // Toggle pause state
 				if (isPaused) {
@@ -268,7 +307,8 @@ namespace Fall2020_CSC403_Project {
 					Controls.RemoveByKey("btnRestart"); // Remove the Restart button
 					Controls.RemoveByKey("lblPaused"); // Remove the Pause label
 					Controls.RemoveByKey("lblPressEsc"); // Remove the Press ESC label
-				}
+                    Controls.RemoveByKey("btnMuteUnmute"); // Remove the Mute/Unmute button
+                }
 
 				return true; // Indicate that you've handled this key
 			}

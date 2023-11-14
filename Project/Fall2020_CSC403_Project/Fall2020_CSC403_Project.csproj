@@ -290,5 +290,8 @@
   <ItemGroup>
     <None Include="data\scissor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mute.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

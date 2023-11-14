@@ -52,9 +52,15 @@ namespace Fall2020_CSC403_Project {
             lblHealthValue.BringToFront();
         }
 
-
+        private SoundPlayer song = new SoundPlayer(Properties.Resources.slowdramatic);
+        private SoundPlayer mute = new SoundPlayer(Properties.Resources.mute);
         public FrmLevel() {
-			InitializeComponent();
+            InitializeComponent();
+            // Check the global mute state before playing the song
+            if (!GlobalMuteState.IsMuted)
+            {
+                song.PlayLooping();
+            }
         }
 
 		private void FrmLevel_Load(object sender, EventArgs e) {
@@ -125,7 +131,7 @@ namespace Fall2020_CSC403_Project {
 			TimeSpan span = DateTime.Now - timeBegin - totalTimePaused;
 			string time = span.ToString(@"hh\:mm\:ss");
 			lblInGameTime.Text = "Time: " + time.ToString();
-		}
+        }
         private void SwitchLevel() {
             // starts the cut scene for level 2
             CutScene2 cutScene2 = new CutScene2();
@@ -185,10 +191,10 @@ namespace Fall2020_CSC403_Project {
             {
                 Fight(enemyReeses6);
                 picEnemyReeses6.BackgroundImage = picEnemyDead.BackgroundImage;
-            }
+			}
 
-            // update player's picture box
-            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+			// update player's picture box
+			picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 		}
 
 		private bool HitAWall(Character c) {
@@ -316,8 +322,37 @@ namespace Fall2020_CSC403_Project {
 			this.Controls.Add(lblPressEsc);
 			lblPressEsc.BringToFront();
 
-			// Timer for flashing text (same as before)
-			Timer flashTimer = new Timer();
+            // Create Mute/Unmute button
+            Button btnMuteUnmute = new Button();
+            btnMuteUnmute.Text = GlobalMuteState.IsMuted ? "Unmute" : "Mute"; // Set the text based on the mute state
+            btnMuteUnmute.Size = new Size(100, 50);
+            btnMuteUnmute.Location = new Point(this.Width / 2 - 50, this.Height / 2 + 80); // Adjust the position as needed
+            btnMuteUnmute.Font = new Font("Arial", 12, FontStyle.Bold);  // Change the font style
+            btnMuteUnmute.BackColor = Color.Red; // Change the background color
+            btnMuteUnmute.ForeColor = Color.White;  // Change the text color
+            btnMuteUnmute.Name = "btnMuteUnmute";
+            btnMuteUnmute.Click += (s, e) => {
+                // Toggle the mute state
+                GlobalMuteState.IsMuted = !GlobalMuteState.IsMuted;
+                // Update the text of the button
+                btnMuteUnmute.Text = GlobalMuteState.IsMuted ? "Unmute" : "Mute";
+
+                // If muted, stop the sound, otherwise resume playing
+                if (GlobalMuteState.IsMuted)
+                {
+					mute.PlayLooping();
+                }
+                else
+                {
+					song.PlayLooping();
+                }
+            };
+            btnMuteUnmute.Name = "btnMuteUnmute";
+			this.Controls.Add(btnMuteUnmute);
+			btnMuteUnmute.BringToFront();
+
+        // Timer for flashing text (same as before)
+        Timer flashTimer = new Timer();
 			flashTimer.Interval = 500; // half a second
 			flashTimer.Tick += (s, e) => { lblPressEsc.Visible = !lblPressEsc.Visible; };
 			flashTimer.Start();
@@ -338,7 +373,8 @@ namespace Fall2020_CSC403_Project {
 					Controls.RemoveByKey("btnRestart"); // Remove the Restart button
 					Controls.RemoveByKey("lblPaused"); // Remove the Pause label
 					Controls.RemoveByKey("lblPressEsc"); // Remove the Press ESC label
-				}
+					Controls.RemoveByKey("btnMuteUnmute"); // Remove the Mute/Unmute button
+                }
 
 				return true; // Indicate that you've handled this key
 			}
