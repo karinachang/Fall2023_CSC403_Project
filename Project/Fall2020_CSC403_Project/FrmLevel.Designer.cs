@@ -202,7 +202,7 @@
             this.picEnemyReeses.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
             this.picEnemyReeses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses.Location = new System.Drawing.Point(1174, 410);
+            this.picEnemyReeses.Location = new System.Drawing.Point(1174, 343);
             this.picEnemyReeses.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses.Name = "picEnemyReeses";
             this.picEnemyReeses.Size = new System.Drawing.Size(121, 118);
@@ -214,7 +214,7 @@
             this.picEnemyReeses1.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses1;
             this.picEnemyReeses1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses1.Location = new System.Drawing.Point(1157, 563);
+            this.picEnemyReeses1.Location = new System.Drawing.Point(1304, 512);
             this.picEnemyReeses1.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses1.Name = "picEnemyReeses1";
             this.picEnemyReeses1.Size = new System.Drawing.Size(138, 110);
@@ -226,7 +226,7 @@
             this.picEnemyReeses2.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses2;
             this.picEnemyReeses2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses2.Location = new System.Drawing.Point(1008, 583);
+            this.picEnemyReeses2.Location = new System.Drawing.Point(1056, 759);
             this.picEnemyReeses2.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses2.Name = "picEnemyReeses2";
             this.picEnemyReeses2.Size = new System.Drawing.Size(96, 78);
@@ -282,7 +282,7 @@
             this.picEnemyReeses3.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses3;
             this.picEnemyReeses3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses3.Location = new System.Drawing.Point(1008, 410);
+            this.picEnemyReeses3.Location = new System.Drawing.Point(1056, 437);
             this.picEnemyReeses3.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses3.Name = "picEnemyReeses3";
             this.picEnemyReeses3.Size = new System.Drawing.Size(121, 118);
@@ -294,7 +294,7 @@
             this.picEnemyReeses4.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses4;
             this.picEnemyReeses4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses4.Location = new System.Drawing.Point(850, 437);
+            this.picEnemyReeses4.Location = new System.Drawing.Point(666, 451);
             this.picEnemyReeses4.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses4.Name = "picEnemyReeses4";
             this.picEnemyReeses4.Size = new System.Drawing.Size(121, 118);
@@ -306,7 +306,7 @@
             this.picEnemyReeses5.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses5;
             this.picEnemyReeses5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses5.Location = new System.Drawing.Point(824, 606);
+            this.picEnemyReeses5.Location = new System.Drawing.Point(415, 721);
             this.picEnemyReeses5.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses5.Name = "picEnemyReeses5";
             this.picEnemyReeses5.Size = new System.Drawing.Size(121, 118);
@@ -318,7 +318,7 @@
             this.picEnemyReeses6.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses6.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses6;
             this.picEnemyReeses6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses6.Location = new System.Drawing.Point(333, 495);
+            this.picEnemyReeses6.Location = new System.Drawing.Point(224, 437);
             this.picEnemyReeses6.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses6.Name = "picEnemyReeses6";
             this.picEnemyReeses6.Size = new System.Drawing.Size(121, 118);
@@ -329,7 +329,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 256);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 256);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1422, 605);

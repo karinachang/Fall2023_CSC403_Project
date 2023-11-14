@@ -416,6 +416,7 @@
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.kitcatcove;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1605, 875);
+            this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.picDoor);
             this.Controls.Add(this.picEnemyKitkat9);
             this.Controls.Add(this.picEnemyKitkat8);
@@ -436,7 +437,6 @@
             this.Controls.Add(this.picWall5);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picEnemyDead);
-            this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.picEnemyKitkat2);
             this.Controls.Add(this.picEnemyKitkat);
             this.Controls.Add(this.picEnemyKitkat3);

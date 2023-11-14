@@ -132,6 +132,14 @@ namespace Fall2020_CSC403_Project {
 			string time = span.ToString(@"hh\:mm\:ss");
 			lblInGameTime.Text = "Time: " + time.ToString();
         }
+		private Boolean checkReesesHealth()
+		{
+			if(enemyReeses.Health <= 0 && enemyReeses1.Health <= 0 && enemyReeses2.Health <= 0 && enemyReeses3.Health <= 0 && enemyReeses4.Health <= 0 && enemyReeses5.Health <= 0 && enemyReeses6.Health <= 0)
+			{
+				return true;
+			}
+			else { return false; }
+		}
         private void SwitchLevel() {
             // starts the cut scene for level 2
             CutScene2 cutScene2 = new CutScene2();
@@ -156,7 +164,7 @@ namespace Fall2020_CSC403_Project {
 			if (HitADoor(player)) {
                 player.ResetMoveSpeed();
                 player.MoveBack();
-                if (enemyReeses.Health < 0)
+                if (checkReesesHealth())
 					SwitchLevel();
 			}
             // check collision with enemies
