@@ -56,7 +56,7 @@ namespace Fall2020_CSC403_Project
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(186, 53);
             this.btnAttack.TabIndex = 2;
-            this.btnAttack.Text = "Random Fight";
+            this.btnAttack.Text = "Easy Mode";
             this.btnAttack.UseVisualStyleBackColor = true;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 

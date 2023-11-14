@@ -91,14 +91,16 @@ namespace Fall2020_CSC403_Project
         private int enemyHitAmount()
         {
             Random rand = new Random();
-            uint hit = (uint)rand.Next(0, 3);
+            uint hit = (uint)rand.Next(0, 4);
 
             if (hit == 0)
-                return -2;
-            else if (hit == 1)
                 return -3;
-            else if (hit == 2)
+            else if (hit == 1)
                 return -4;
+            else if (hit == 2)
+                return -5;
+            else if (hit == 3)
+                return -6;
             else
                 return 0;
         }
@@ -119,10 +121,21 @@ namespace Fall2020_CSC403_Project
             this.Controls.Add(enemyEaten);
             enemyEaten.BringToFront();
         }
+
+        private void gainFive()
+        {
+            int currentHealth = player.Health;
+            int afterEating = currentHealth + 5;
+            //dont exceed MaxHealth
+            if (afterEating <= player.MaxHealth)
+                player.AlterHealth(5);
+            else
+                restoreHealth();
+        }
         private void restoreHealth()
         {
             int currentHealth = player.Health;
-            int healthToAdd = 15 - currentHealth;
+            int healthToAdd = 20 - currentHealth;
             player.AlterHealth(healthToAdd);
         }
 
@@ -174,7 +187,7 @@ namespace Fall2020_CSC403_Project
         private void defeatEnemy()
         {
             AddWinOrLossControls("Congrats! You defeated the opponent.", Color.Green, new EventHandler(btnProceedForWin_Click));
-            restoreHealth();
+            gainFive();
             enemyEaten();
             instance = null;
             // Close();
@@ -192,7 +205,7 @@ namespace Fall2020_CSC403_Project
             player.OnAttack(playerHitAmount()); //range -3, -4, -5
 
             if (enemy.Health > 0)
-                enemy.OnAttack(enemyHitAmount()); //range -2,-3,-4
+                enemy.OnAttack(enemyHitAmount()); //range -3, -4, -5, -6
 
             UpdateHealthBars();
 
@@ -216,17 +229,11 @@ namespace Fall2020_CSC403_Project
             String choice;
             uint num = (uint)rand.Next(0, 3);
             if (num == 0)
-            {
                 choice = "Rock";
-            }
             else if (num == 1)
-            {
                 choice = "Paper";
-            }
             else
-            {
                 choice = "Scissors";
-            }
 
             return choice; //0,1,2
         }
@@ -313,35 +320,25 @@ namespace Fall2020_CSC403_Project
             if (playerChoice == "Rock")
             {
                 if (enemyChoice == "Paper")
-                {
                     enemy.OnAttack(enemyHitAmount());
-                }
                 if (enemyChoice == "Scissors")
-                {
                     player.OnAttack(playerHitAmount());
-                }
             }
+
             if (playerChoice == "Paper")
             {
                 if (enemyChoice == "Rock")
-                {
                     player.OnAttack(playerHitAmount());
-                }
                 if (enemyChoice == "Scissors")
-                {
                     enemy.OnAttack(enemyHitAmount());
-                }
             }
+
             if (playerChoice == "Scissors")
             {
                 if (enemyChoice == "Rock")
-                {
                     enemy.OnAttack(enemyHitAmount());
-                }
                 if (enemyChoice == "Paper")
-                {
                     player.OnAttack(playerHitAmount());
-                }
             }
         }
 

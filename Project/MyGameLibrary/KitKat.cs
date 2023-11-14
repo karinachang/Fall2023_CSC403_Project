@@ -39,7 +39,7 @@ namespace Fall2020_CSC403_Project.code
         public KitKat(Vector2 initPos, Collider collider) : base(initPos, collider)
         {
             MaxHealth = 10;
-            strength = 2;
+            strength = 1;
             Health = MaxHealth;
         }
 

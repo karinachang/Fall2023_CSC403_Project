@@ -187,60 +187,14 @@ namespace Fall2020_CSC403_Project
             // Close();
         }
 
-        private void btnAttack_Click(object sender, EventArgs e)
-        {
-            player.OnAttack(playerHitAmount()); //range -3, -4, -5
-
-            if (enemy.Health > 0)
-                enemy.OnAttack(enemyHitAmount()); //range -2,-3,-4
-
-            UpdateHealthBars();
-
-            if (player.Health <= 0)
-            {
-                defeatPlayer();
-                instance = null;
-                //Close();
-            }
-            else if (enemy.Health <= 0)
-            {
-                defeatEnemy();
-                instance = null;
-                //Close();
-            }
-        }
-
-        private string enemy_Choice()
-        {
-            Random rand = new Random();
-            String choice;
-            uint num = (uint)rand.Next(0, 3);
-            if (num == 0)
-            {
-                choice = "Rock";
-            }
-            else if (num == 1)
-            {
-                choice = "Paper";
-            }
-            else
-            {
-                choice = "Scissors";
-            }
-
-            return choice; //0,1,2
-        }
-
         private void btnRock_Click(object sender, EventArgs e)
         {
+            //player chose rock
             if (enemy.Health > 0)
             {
-                //player chose rock
-                String enemyChoice;
                 String playerChoice;
-                enemyChoice = enemy_Choice();
                 playerChoice = "Rock";
-                player_v_enemy(playerChoice, enemyChoice);
+                player_v_enemy(playerChoice);
             }
 
             UpdateHealthBars();
@@ -262,11 +216,9 @@ namespace Fall2020_CSC403_Project
             //player chose Paper
             if (enemy.Health > 0)
             {
-                String enemyChoice;
                 String playerChoice;
-                enemyChoice = enemy_Choice();
                 playerChoice = "Paper";
-                player_v_enemy(playerChoice, enemyChoice);
+                player_v_enemy(playerChoice);
             }
 
             UpdateHealthBars();
@@ -287,11 +239,9 @@ namespace Fall2020_CSC403_Project
             //player chose Scissors
             if (enemy.Health > 0)
             {
-                String enemyChoice;
                 String playerChoice;
-                enemyChoice = enemy_Choice();
                 playerChoice = "Scissors";
-                player_v_enemy(playerChoice, enemyChoice);
+                player_v_enemy(playerChoice);
             }
 
             UpdateHealthBars();
@@ -308,41 +258,14 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        private void player_v_enemy(String playerChoice, String enemyChoice)
+        private void player_v_enemy(String playerChoice)
         {
             if (playerChoice == "Rock")
-            {
-                if (enemyChoice == "Paper")
-                {
-                    enemy.OnAttack(enemyHitAmount());
-                }
-                if (enemyChoice == "Scissors")
-                {
-                    player.OnAttack(playerHitAmount());
-                }
-            }
+                player.OnAttack(-100);
             if (playerChoice == "Paper")
-            {
-                if (enemyChoice == "Rock")
-                {
-                    player.OnAttack(playerHitAmount());
-                }
-                if (enemyChoice == "Scissors")
-                {
-                    enemy.OnAttack(enemyHitAmount());
-                }
-            }
+                enemy.OnAttack(-100);
             if (playerChoice == "Scissors")
-            {
-                if (enemyChoice == "Rock")
-                {
-                    enemy.OnAttack(enemyHitAmount());
-                }
-                if (enemyChoice == "Paper")
-                {
-                    player.OnAttack(playerHitAmount());
-                }
-            }
+                enemy.OnAttack(-5);
         }
 
         private void EnemyDamage(int amount)
