@@ -100,7 +100,7 @@
             // 
             this.picDoor.BackColor = System.Drawing.Color.IndianRed;
             this.picDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picDoor.Location = new System.Drawing.Point(1362, 256);
+            this.picDoor.Location = new System.Drawing.Point(1353, 266);
             this.picDoor.Margin = new System.Windows.Forms.Padding(4);
             this.picDoor.Name = "picDoor";
             this.picDoor.Size = new System.Drawing.Size(80, 205);
@@ -282,7 +282,7 @@
             this.picEnemyReeses3.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses3;
             this.picEnemyReeses3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses3.Location = new System.Drawing.Point(1056, 437);
+            this.picEnemyReeses3.Location = new System.Drawing.Point(515, 719);
             this.picEnemyReeses3.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses3.Name = "picEnemyReeses3";
             this.picEnemyReeses3.Size = new System.Drawing.Size(121, 118);
@@ -306,10 +306,10 @@
             this.picEnemyReeses5.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses5;
             this.picEnemyReeses5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses5.Location = new System.Drawing.Point(415, 721);
+            this.picEnemyReeses5.Location = new System.Drawing.Point(36, 780);
             this.picEnemyReeses5.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses5.Name = "picEnemyReeses5";
-            this.picEnemyReeses5.Size = new System.Drawing.Size(121, 118);
+            this.picEnemyReeses5.Size = new System.Drawing.Size(72, 59);
             this.picEnemyReeses5.TabIndex = 23;
             this.picEnemyReeses5.TabStop = false;
             // 
@@ -329,7 +329,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 256);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 256);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1422, 605);

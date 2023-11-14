@@ -9,6 +9,7 @@ namespace Fall2020_CSC403_Project {
 		private Player player;
 		private bool isPaused = false;
 		private BossHershey bossHersheys;
+		private Character hiddenCollision;
 		private Character[] walls;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
@@ -64,9 +65,10 @@ namespace Fall2020_CSC403_Project {
 
 			player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
 			bossHersheys = new BossHershey(CreatePosition(picBossHersheys), CreateCollider(picBossHersheys, PADDING));
+			hiddenCollision = new Character(CreatePosition(picHiddenCollision), CreateCollider(picHiddenCollision, PADDING));
 	  
 
-			bossHersheys.Img = picBossHersheys.BackgroundImage;
+			bossHersheys.Img = picHiddenHersheys.BackgroundImage;
 
 			bossHersheys.Color = Color.Red;
 
@@ -125,9 +127,12 @@ namespace Fall2020_CSC403_Project {
 				player.MoveBack();
 
 			// check collision with enemy
-			if (HitAChar(player, bossHersheys) && bossHersheys.Health > 0) {
+			if (HitAChar(player, bossHersheys) && picBossHersheys.BackgroundImage == picHiddenHersheys.BackgroundImage) {
 				Fight(bossHersheys);
 				picBossHersheys.BackgroundImage = picEnemyDead.BackgroundImage;
+			}
+			else if(HitAChar(player, hiddenCollision)){
+				picBossHersheys.BackgroundImage = picHiddenHersheys.BackgroundImage;
 			}
 
 			// update player's picture box
