@@ -31,7 +31,6 @@ namespace Fall2020_CSC403_Project
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnAttack = new System.Windows.Forms.Button();
             this.btnRock = new System.Windows.Forms.Button();
             this.btnScissors = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
@@ -47,18 +46,6 @@ namespace Fall2020_CSC403_Project
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAttack
-            // 
-            this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttack.Location = new System.Drawing.Point(447, 454);
-            this.btnAttack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(186, 53);
-            this.btnAttack.TabIndex = 2;
-            this.btnAttack.Text = "Random Fight";
-            this.btnAttack.UseVisualStyleBackColor = true;
-            this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // btnRock
             // 
@@ -201,7 +188,6 @@ namespace Fall2020_CSC403_Project
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPlayerHealthFull);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.btnRock);
             this.Controls.Add(this.btnPaper);
             this.Controls.Add(this.btnScissors);
@@ -223,7 +209,6 @@ namespace Fall2020_CSC403_Project
 
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.PictureBox picEnemy;
-        private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.Button btnRock;
         private System.Windows.Forms.Button btnPaper;
         private System.Windows.Forms.Button btnScissors;
