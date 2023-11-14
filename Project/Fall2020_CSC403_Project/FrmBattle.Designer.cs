@@ -24,7 +24,7 @@ namespace Fall2020_CSC403_Project {
     /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
-    private void InitializeComponent() {
+    public void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnRock = new System.Windows.Forms.Button();

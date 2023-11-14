@@ -8,12 +8,12 @@ namespace Fall2020_CSC403_Project {
 	public partial class FrmLevel3 : Form {
 		private Player player;
 		private bool isPaused = false;
-		private Enemy bossHersheys;
+		private BossHershey bossHersheys;
 		private Character[] walls;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
-		private FrmBattle frmBattle;
+		private FrmBattle_Boss frmBattle;
         private PictureBox healthBarBackground;
         private PictureBox healthBar;
         private Label lblHealthValue;
@@ -54,7 +54,7 @@ namespace Fall2020_CSC403_Project {
 			const int NUM_WALLS = 13;
 
 			player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-			bossHersheys = new Enemy(CreatePosition(picBossHersheys), CreateCollider(picBossHersheys, PADDING));
+			bossHersheys = new BossHershey(CreatePosition(picBossHersheys), CreateCollider(picBossHersheys, PADDING));
 	  
 
 			bossHersheys.Img = picBossHersheys.BackgroundImage;
@@ -140,11 +140,11 @@ namespace Fall2020_CSC403_Project {
 			return you.Collider.Intersects(other.Collider);
 		}
 
-        private void Fight(Enemy enemy)
+        private void Fight(BossHershey enemy)
         {
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy);
+            frmBattle = FrmBattle_Boss.GetInstance(enemy);
             frmBattle.ShowDialog(); // Make the battle form modal
             UpdateHealthBar(); // Update health bar after the battle
         }
