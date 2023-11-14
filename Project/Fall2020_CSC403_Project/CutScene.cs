@@ -10,13 +10,17 @@ namespace Fall2020_CSC403_Project
 	{
         private SoundPlayer song = new SoundPlayer(Properties.Resources.slowdramatic);
         public CutScene()
-		{
-			InitializeComponent();
-            // start the song
-            song.PlayLooping();
+        {
+            InitializeComponent();
+            // Check the global mute state before playing the song
+            if (!GlobalMuteState.IsMuted)
+            {
+                song.PlayLooping();
+            }
         }
 
-		private void StartLevel()
+
+        private void StartLevel()
 		{
             // starts the level
             FrmLevel level  = new FrmLevel();
