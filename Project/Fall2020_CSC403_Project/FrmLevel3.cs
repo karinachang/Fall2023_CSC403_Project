@@ -153,6 +153,12 @@ namespace Fall2020_CSC403_Project {
         {
             player.ResetMoveSpeed();
             player.MoveBack();
+			// boss cutscene first
+			CutSceneBoss cutSceneBoss = new CutSceneBoss();
+            cutSceneBoss.Size = new Size(800, 450);
+            this.Hide();
+            cutSceneBoss.ShowDialog();
+			// boss battle next
             frmBattle = FrmBattle_Boss.GetInstance(enemy);
             frmBattle.ShowDialog(); // Make the battle form modal
             UpdateHealthBar(); // Update health bar after the battle

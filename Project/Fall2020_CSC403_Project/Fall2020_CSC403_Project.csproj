@@ -52,6 +52,12 @@
     <Compile Include="BackStory.Designer.cs">
       <DependentUpon>BackStory.cs</DependentUpon>
     </Compile>
+    <Compile Include="CutSceneBoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CutSceneBoss.Designer.cs">
+      <DependentUpon>CutSceneBoss.cs</DependentUpon>
+    </Compile>
     <Compile Include="CutScene3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BackStory.resx">
       <DependentUpon>BackStory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CutSceneBoss.resx">
+      <DependentUpon>CutSceneBoss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CutScene3.resx">
       <DependentUpon>CutScene3.cs</DependentUpon>
