@@ -10,26 +10,26 @@ namespace Fall2020_CSC403_Project {
 	public partial class FrmLevel2 : Form {
 		private Player player;
 		private bool isPaused = false;
-		private Enemy enemyKitkat;
-		private Enemy enemyKitkat1;
-		private Enemy enemyKitkat2;
-		private Enemy enemyKitkat3;
-		private Enemy enemyKitkat4;
-		private Enemy enemyKitkat5;
-		private Enemy enemyKitkat6;
-		private Enemy enemyKitkat7;
-		private Enemy enemyKitkat8;
-		private Enemy enemyKitkat9;
+		private KitKat enemyKitkat;
+		private KitKat enemyKitkat1;
+		private KitKat enemyKitkat2;
+		private KitKat enemyKitkat3;
+		private KitKat enemyKitkat4;
+		private KitKat enemyKitkat5;
+		private KitKat enemyKitkat6;
+		private KitKat enemyKitkat7;
+		private KitKat enemyKitkat8;
+		private KitKat enemyKitkat9;
 		private Character[] walls;
 		private Character door;
 		private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
-		private FrmBattle frmBattle;
+		private FrmBattle_KitKat frmBattle;
 		private PictureBox healthBarBackground;
 		private PictureBox healthBar;
 		private Label lblHealthValue;
-		private Enemy kitKatWithKey;
+		private KitKat kitKatWithKey;
 
 		public FrmLevel2() {
 			InitializeComponent();
@@ -40,16 +40,16 @@ namespace Fall2020_CSC403_Project {
 			const int NUM_WALLS = 13;
 
 			player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-			enemyKitkat = new Enemy(CreatePosition(picEnemyKitkat), CreateCollider(picEnemyKitkat, PADDING));
-			enemyKitkat1 = new Enemy(CreatePosition(picEnemyKitkat1), CreateCollider(picEnemyKitkat1, PADDING));
-			enemyKitkat2 = new Enemy(CreatePosition(picEnemyKitkat2), CreateCollider(picEnemyKitkat2, PADDING));
-			enemyKitkat3 = new Enemy(CreatePosition(picEnemyKitkat3), CreateCollider(picEnemyKitkat3, PADDING));
-			enemyKitkat4 = new Enemy(CreatePosition(picEnemyKitkat4), CreateCollider(picEnemyKitkat4, PADDING));
-			enemyKitkat5 = new Enemy(CreatePosition(picEnemyKitkat5), CreateCollider(picEnemyKitkat5, PADDING));
-			enemyKitkat6 = new Enemy(CreatePosition(picEnemyKitkat6), CreateCollider(picEnemyKitkat6, PADDING));
-			enemyKitkat7 = new Enemy(CreatePosition(picEnemyKitkat7), CreateCollider(picEnemyKitkat7, PADDING));
-			enemyKitkat8 = new Enemy(CreatePosition(picEnemyKitkat8), CreateCollider(picEnemyKitkat8, PADDING));
-			enemyKitkat9 = new Enemy(CreatePosition(picEnemyKitkat9), CreateCollider(picEnemyKitkat9, PADDING));
+			enemyKitkat = new KitKat(CreatePosition(picEnemyKitkat), CreateCollider(picEnemyKitkat, PADDING));
+			enemyKitkat1 = new KitKat(CreatePosition(picEnemyKitkat1), CreateCollider(picEnemyKitkat1, PADDING));
+			enemyKitkat2 = new KitKat(CreatePosition(picEnemyKitkat2), CreateCollider(picEnemyKitkat2, PADDING));
+			enemyKitkat3 = new KitKat(CreatePosition(picEnemyKitkat3), CreateCollider(picEnemyKitkat3, PADDING));
+			enemyKitkat4 = new KitKat(CreatePosition(picEnemyKitkat4), CreateCollider(picEnemyKitkat4, PADDING));
+			enemyKitkat5 = new KitKat(CreatePosition(picEnemyKitkat5), CreateCollider(picEnemyKitkat5, PADDING));
+			enemyKitkat6 = new KitKat(CreatePosition(picEnemyKitkat6), CreateCollider(picEnemyKitkat6, PADDING));
+			enemyKitkat7 = new KitKat(CreatePosition(picEnemyKitkat7), CreateCollider(picEnemyKitkat7, PADDING));
+			enemyKitkat8 = new KitKat(CreatePosition(picEnemyKitkat8), CreateCollider(picEnemyKitkat8, PADDING));
+			enemyKitkat9 = new KitKat(CreatePosition(picEnemyKitkat9), CreateCollider(picEnemyKitkat9, PADDING));
 
 			enemyKitkat.Img = picEnemyKitkat.BackgroundImage;
 			enemyKitkat1.Img = picEnemyKitkat1.BackgroundImage;
@@ -74,7 +74,7 @@ namespace Fall2020_CSC403_Project {
 			enemyKitkat9.Color = Color.Red;
 
 			// give random kit kat the key to the door
-			Enemy[] allEnemies = new Enemy[] {enemyKitkat, enemyKitkat1, enemyKitkat2, enemyKitkat3,
+			KitKat[] allEnemies = new KitKat[] {enemyKitkat, enemyKitkat1, enemyKitkat2, enemyKitkat3,
 				enemyKitkat4, enemyKitkat5, enemyKitkat6, enemyKitkat7, enemyKitkat8, enemyKitkat9};
 			Random random = new Random();
 			kitKatWithKey = allEnemies[random.Next(0, allEnemies.Length)];
@@ -247,11 +247,11 @@ namespace Fall2020_CSC403_Project {
 			return you.Collider.Intersects(other.Collider);
 		}
 
-		private void Fight(Enemy enemy)
+		private void Fight(KitKat enemy)
 		{
 			player.ResetMoveSpeed();
 			player.MoveBack();
-			frmBattle = FrmBattle.GetInstance(enemy);
+			frmBattle = FrmBattle_KitKat.GetInstance(enemy);
 			frmBattle.ShowDialog(); // Make the battle form modal
 			UpdateHealthBar(); // Update health bar after the battle
 		}

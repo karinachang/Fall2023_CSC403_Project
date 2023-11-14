@@ -70,6 +70,24 @@
     <Compile Include="FrmBattle.Designer.cs">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBattle_Boss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBattle_Boss.designer.cs">
+      <DependentUpon>FrmBattle_Boss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBattle_KitKat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBattle_KitKat.Designer.cs">
+      <DependentUpon>FrmBattle_KitKat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBattle_Reeses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBattle_Reeses.Designer.cs">
+      <DependentUpon>FrmBattle_Reeses.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLevel3.cs">
       <SubType>Form</SubType>
     </Compile>

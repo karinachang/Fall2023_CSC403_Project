@@ -8,19 +8,19 @@ namespace Fall2020_CSC403_Project {
 	public partial class FrmLevel : Form {
 		private Player player;
 		private bool isPaused = false;
-		private Enemy enemyReeses;
-		private Enemy enemyReeses1;
-		private Enemy enemyReeses2;
-		private Enemy enemyReeses3;
-		private Enemy enemyReeses4;
-		private Enemy enemyReeses5;
-		private Enemy enemyReeses6;
+		private Reeses enemyReeses;
+		private Reeses enemyReeses1;
+		private Reeses enemyReeses2;
+		private Reeses enemyReeses3;
+		private Reeses enemyReeses4;
+		private Reeses enemyReeses5;
+		private Reeses enemyReeses6;
 		private Character[] walls;
         private Character door;
         private DateTime timeBegin;
 		private TimeSpan totalTimePaused;
 		private DateTime pauseBegin;
-		private FrmBattle frmBattle;
+		private FrmBattle_Reeses frmBattle;
         private PictureBox healthBarBackground;
         private PictureBox healthBar;
         private Label lblHealthValue;
@@ -62,13 +62,13 @@ namespace Fall2020_CSC403_Project {
 			const int NUM_WALLS = 10;
 
 			player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-			enemyReeses = new Enemy(CreatePosition(picEnemyReeses), CreateCollider(picEnemyReeses, PADDING));
-			enemyReeses1 = new Enemy(CreatePosition(picEnemyReeses1), CreateCollider(picEnemyReeses1, PADDING));
-            enemyReeses2 = new Enemy(CreatePosition(picEnemyReeses2), CreateCollider(picEnemyReeses2, PADDING));
-            enemyReeses3 = new Enemy(CreatePosition(picEnemyReeses3), CreateCollider(picEnemyReeses3, PADDING));
-            enemyReeses4 = new Enemy(CreatePosition(picEnemyReeses4), CreateCollider(picEnemyReeses4, PADDING));
-            enemyReeses5 = new Enemy(CreatePosition(picEnemyReeses5), CreateCollider(picEnemyReeses5, PADDING));
-            enemyReeses6 = new Enemy(CreatePosition(picEnemyReeses6), CreateCollider(picEnemyReeses6, PADDING));
+			enemyReeses = new Reeses(CreatePosition(picEnemyReeses), CreateCollider(picEnemyReeses, PADDING));
+			enemyReeses1 = new Reeses(CreatePosition(picEnemyReeses1), CreateCollider(picEnemyReeses1, PADDING));
+            enemyReeses2 = new Reeses(CreatePosition(picEnemyReeses2), CreateCollider(picEnemyReeses2, PADDING));
+            enemyReeses3 = new Reeses(CreatePosition(picEnemyReeses3), CreateCollider(picEnemyReeses3, PADDING));
+            enemyReeses4 = new Reeses(CreatePosition(picEnemyReeses4), CreateCollider(picEnemyReeses4, PADDING));
+            enemyReeses5 = new Reeses(CreatePosition(picEnemyReeses5), CreateCollider(picEnemyReeses5, PADDING));
+            enemyReeses6 = new Reeses(CreatePosition(picEnemyReeses6), CreateCollider(picEnemyReeses6, PADDING));
 			enemyReeses.Img = picEnemyReeses.BackgroundImage;
 			enemyReeses1.Img = picEnemyReeses1.BackgroundImage;
 			enemyReeses2.Img = picEnemyReeses2.BackgroundImage;
@@ -210,11 +210,11 @@ namespace Fall2020_CSC403_Project {
 			return you.Collider.Intersects(other.Collider);
 		}
 
-		private void Fight(Enemy enemy)
+		private void Fight(Reeses enemy)
 		{
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy);
+            frmBattle = FrmBattle_Reeses.GetInstance(enemy);
             frmBattle.ShowDialog(); // Make the battle form modal
             UpdateHealthBar(); // Update health bar after the battle
         }
