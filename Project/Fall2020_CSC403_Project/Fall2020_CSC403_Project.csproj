@@ -302,5 +302,14 @@
   <ItemGroup>
     <None Include="data\mute.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\wall destroyed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\door.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\door_open.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

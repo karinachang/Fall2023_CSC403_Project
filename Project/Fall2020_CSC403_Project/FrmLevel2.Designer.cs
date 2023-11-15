@@ -53,6 +53,7 @@
             this.picEnemyKitkat5 = new System.Windows.Forms.PictureBox();
             this.picEnemyKitkat6 = new System.Windows.Forms.PictureBox();
             this.picDoor = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat7)).BeginInit();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDoor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -135,7 +137,7 @@
             this.picEnemyKitkat7.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyKitkat7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat7;
             this.picEnemyKitkat7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyKitkat7.Location = new System.Drawing.Point(70, 48);
+            this.picEnemyKitkat7.Location = new System.Drawing.Point(20, 146);
             this.picEnemyKitkat7.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat7.Name = "picEnemyKitkat7";
             this.picEnemyKitkat7.Size = new System.Drawing.Size(242, 168);
@@ -366,7 +368,7 @@
             this.picEnemyKitkat1.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyKitkat1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_kitkat1;
             this.picEnemyKitkat1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyKitkat1.Location = new System.Drawing.Point(418, 161);
+            this.picEnemyKitkat1.Location = new System.Drawing.Point(424, 161);
             this.picEnemyKitkat1.Margin = new System.Windows.Forms.Padding(2);
             this.picEnemyKitkat1.Name = "picEnemyKitkat1";
             this.picEnemyKitkat1.Size = new System.Drawing.Size(141, 96);
@@ -399,14 +401,27 @@
             // 
             // picDoor
             // 
-            this.picDoor.BackColor = System.Drawing.Color.IndianRed;
+            this.picDoor.BackColor = System.Drawing.Color.Transparent;
+            this.picDoor.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picDoor.Location = new System.Drawing.Point(1396, 146);
+            this.picDoor.Location = new System.Drawing.Point(1286, 129);
             this.picDoor.Margin = new System.Windows.Forms.Padding(2);
             this.picDoor.Name = "picDoor";
             this.picDoor.Size = new System.Drawing.Size(153, 151);
             this.picDoor.TabIndex = 27;
             this.picDoor.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall_destroyed;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1410, 129);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmLevel2
             // 
@@ -443,6 +458,7 @@
             this.Controls.Add(this.picEnemyKitkat1);
             this.Controls.Add(this.picEnemyKitkat5);
             this.Controls.Add(this.picEnemyKitkat6);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLevel2";
@@ -477,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyKitkat6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDoor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,6 +530,7 @@
     private System.Windows.Forms.PictureBox picEnemyKitkat8;
     private System.Windows.Forms.PictureBox picEnemyKitkat9;
         private System.Windows.Forms.PictureBox picDoor;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

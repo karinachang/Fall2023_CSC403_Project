@@ -48,6 +48,7 @@
             this.picEnemyReeses5 = new System.Windows.Forms.PictureBox();
             this.picEnemyReeses6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picDoor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
@@ -69,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -98,12 +100,13 @@
             // 
             // picDoor
             // 
-            this.picDoor.BackColor = System.Drawing.Color.IndianRed;
+            this.picDoor.BackColor = System.Drawing.Color.Transparent;
+            this.picDoor.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.door;
             this.picDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picDoor.Location = new System.Drawing.Point(1353, 266);
+            this.picDoor.Location = new System.Drawing.Point(1264, 167);
             this.picDoor.Margin = new System.Windows.Forms.Padding(4);
             this.picDoor.Name = "picDoor";
-            this.picDoor.Size = new System.Drawing.Size(80, 205);
+            this.picDoor.Size = new System.Drawing.Size(138, 208);
             this.picDoor.TabIndex = 20;
             this.picDoor.TabStop = false;
             // 
@@ -202,7 +205,7 @@
             this.picEnemyReeses.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyReeses.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_reeses;
             this.picEnemyReeses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyReeses.Location = new System.Drawing.Point(1174, 343);
+            this.picEnemyReeses.Location = new System.Drawing.Point(1202, 294);
             this.picEnemyReeses.Margin = new System.Windows.Forms.Padding(4);
             this.picEnemyReeses.Name = "picEnemyReeses";
             this.picEnemyReeses.Size = new System.Drawing.Size(121, 118);
@@ -329,12 +332,24 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 256);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 256);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1422, 605);
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.door_open;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1126, 193);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(332, 376);
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmLevel
             // 
@@ -366,6 +381,7 @@
             this.Controls.Add(this.picEnemyReeses);
             this.Controls.Add(this.picEnemyReeses1);
             this.Controls.Add(this.picEnemyReeses2);
+            this.Controls.Add(this.pictureBox2);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLevel";
@@ -395,6 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyReeses6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,6 +443,7 @@
         private System.Windows.Forms.PictureBox picEnemyReeses5;
         private System.Windows.Forms.PictureBox picEnemyReeses6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

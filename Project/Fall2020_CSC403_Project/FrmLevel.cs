@@ -136,6 +136,7 @@ namespace Fall2020_CSC403_Project {
 		{
 			if(enemyReeses.Health <= 0 && enemyReeses1.Health <= 0 && enemyReeses2.Health <= 0 && enemyReeses3.Health <= 0 && enemyReeses4.Health <= 0 && enemyReeses5.Health <= 0 && enemyReeses6.Health <= 0)
 			{
+				picDoor.BackgroundImage = pictureBox2.BackgroundImage;
 				return true;
 			}
 			else { return false; }
@@ -170,34 +171,41 @@ namespace Fall2020_CSC403_Project {
             // check collision with enemies
             if (HitAChar(player, enemyReeses) && enemyReeses.Health > 0) {
 				Fight(enemyReeses);
+				checkReesesHealth();
 				picEnemyReeses.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyReeses1) && enemyReeses1.Health > 0) {
 				Fight(enemyReeses1);
-				picEnemyReeses1.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkReesesHealth();
+                picEnemyReeses1.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyReeses2) && enemyReeses2.Health > 0) {
 				Fight(enemyReeses2);
-				picEnemyReeses2.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkReesesHealth();
+                picEnemyReeses2.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
             else if (HitAChar(player, enemyReeses3) && enemyReeses3.Health > 0)
             {
                 Fight(enemyReeses3);
+                checkReesesHealth();
                 picEnemyReeses3.BackgroundImage = picEnemyDead.BackgroundImage;
             }
             else if (HitAChar(player, enemyReeses4) && enemyReeses4.Health > 0)
             {
                 Fight(enemyReeses4);
+                checkReesesHealth();
                 picEnemyReeses4.BackgroundImage = picEnemyDead.BackgroundImage;
             }
 			else if (HitAChar(player, enemyReeses5) && enemyReeses5.Health > 0)
             {
                 Fight(enemyReeses5);
+                checkReesesHealth();
                 picEnemyReeses5.BackgroundImage = picEnemyDead.BackgroundImage;
             }
 			else if (HitAChar(player, enemyReeses6) && enemyReeses6.Health > 0)
             {
                 Fight(enemyReeses6);
+                checkReesesHealth();
                 picEnemyReeses6.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 

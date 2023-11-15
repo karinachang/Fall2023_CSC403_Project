@@ -190,8 +190,10 @@ namespace Fall2020_CSC403_Project {
 				if (kitKatWithKey.Health < 0)
 					SwitchLevel();
 			}
-			// check collision with enemies
-			if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
+            // check collision with enemies
+            
+
+            if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
 				Fight(enemyKitkat);
 				picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
@@ -232,9 +234,14 @@ namespace Fall2020_CSC403_Project {
 				Fight(enemyKitkat9);
 				picEnemyKitkat9.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
+			else if (HitAChar(player, kitKatWithKey) && kitKatWithKey.Health < 0)
+            {
+                picDoor.BackgroundImage = pictureBox1.BackgroundImage;
+            }
 
-			// update player's picture box
-			picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 		}
 
 		private bool HitAWall(Character c) {
