@@ -195,55 +195,67 @@ namespace Fall2020_CSC403_Project {
 
             if (HitAChar(player, enemyKitkat) && enemyKitkat.Health > 0) {
 				Fight(enemyKitkat);
-				picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat1) && enemyKitkat1.Health > 0)
 			{
 				Fight(enemyKitkat1);
-				picEnemyKitkat1.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat1.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat2) && enemyKitkat2.Health > 0) {
 				Fight(enemyKitkat2);
-				picEnemyKitkat2.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat2.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat3) && enemyKitkat3.Health > 0) {
 				Fight(enemyKitkat3);
-				picEnemyKitkat3.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat3.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat4) && enemyKitkat4.Health > 0) {
 				Fight(enemyKitkat4);
-				picEnemyKitkat4.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat4.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat5) && enemyKitkat5.Health > 0) {
 				Fight(enemyKitkat5);
-				picEnemyKitkat5.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat5.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat6) && enemyKitkat6.Health > 0) {
 				Fight(enemyKitkat6);
-				picEnemyKitkat6.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat6.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat7) && enemyKitkat7.Health > 0) {
 				Fight(enemyKitkat7);
-				picEnemyKitkat7.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat7.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat8) && enemyKitkat8.Health > 0) {
 				Fight(enemyKitkat8);
-				picEnemyKitkat8.BackgroundImage = picEnemyDead.BackgroundImage;
+                checkKitKatWithKey();
+                picEnemyKitkat8.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
 			else if (HitAChar(player, enemyKitkat9) && enemyKitkat9.Health > 0) {
 				Fight(enemyKitkat9);
-				picEnemyKitkat9.BackgroundImage = picEnemyDead.BackgroundImage;
+				checkKitKatWithKey();
+                picEnemyKitkat9.BackgroundImage = picEnemyDead.BackgroundImage;
 			}
-			else if (HitAChar(player, kitKatWithKey) && kitKatWithKey.Health < 0)
-            {
-                picDoor.BackgroundImage = pictureBox1.BackgroundImage;
-            }
 
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 		}
-
+		private void checkKitKatWithKey()
+		{
+			if(kitKatWithKey.Health < 0)
+			{
+                picDoor.BackgroundImage = pictureBox1.BackgroundImage;
+            }
+		}
 		private bool HitAWall(Character c) {
 			bool hitAWall = false;
 			for (int w = 0; w < walls.Length; w++) {
