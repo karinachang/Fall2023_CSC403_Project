@@ -75,6 +75,20 @@ namespace Fall2020_CSC403_Project
             this.btnRock.UseVisualStyleBackColor = true;
             this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
             // 
+            // btnPaper
+            // 
+            this.btnPaper.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.paper;
+            this.btnPaper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPaper.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaper.Location = new System.Drawing.Point(470, 521);
+            this.btnPaper.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPaper.Name = "btnPaper";
+            this.btnPaper.Size = new System.Drawing.Size(131, 180);
+            this.btnPaper.TabIndex = 2;
+            this.btnPaper.UseVisualStyleBackColor = true;
+            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
+            // 
             // btnScissors
             // 
             this.btnScissors.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.scissor;
@@ -147,20 +161,6 @@ namespace Fall2020_CSC403_Project
             this.picBossBattle.TabIndex = 7;
             this.picBossBattle.TabStop = false;
             this.picBossBattle.Visible = false;
-            // 
-            // btnPaper
-            // 
-            this.btnPaper.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.paper;
-            this.btnPaper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPaper.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPaper.Location = new System.Drawing.Point(470, 521);
-            this.btnPaper.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPaper.Name = "btnPaper";
-            this.btnPaper.Size = new System.Drawing.Size(131, 180);
-            this.btnPaper.TabIndex = 2;
-            this.btnPaper.UseVisualStyleBackColor = true;
-            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
             // 
             // picEnemy
             // 

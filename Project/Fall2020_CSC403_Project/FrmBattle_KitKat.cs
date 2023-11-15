@@ -94,10 +94,8 @@ namespace Fall2020_CSC403_Project
             uint hit = (uint)rand.Next(0, 4);
 
             if (hit == 0)
-                return -3;
-            else if (hit == 1)
                 return -4;
-            else if (hit == 2)
+            else if (hit == 1 || hit == 2)
                 return -5;
             else if (hit == 3)
                 return -6;
@@ -122,10 +120,10 @@ namespace Fall2020_CSC403_Project
             enemyEaten.BringToFront();
         }
 
-        private void gainFive()
+        private void gainSeven()
         {
             int currentHealth = player.Health;
-            int afterEating = currentHealth + 5;
+            int afterEating = currentHealth + 7;
             //dont exceed MaxHealth
             if (afterEating <= player.MaxHealth)
                 player.AlterHealth(5);
@@ -187,7 +185,7 @@ namespace Fall2020_CSC403_Project
         private void defeatEnemy()
         {
             AddWinOrLossControls("Congrats! You defeated the opponent.", Color.Green, new EventHandler(btnProceedForWin_Click));
-            gainFive();
+            gainSeven();
             enemyEaten();
             instance = null;
             // Close();
@@ -198,6 +196,19 @@ namespace Fall2020_CSC403_Project
             AddWinOrLossControls("Mr. Peanut died. You suck!", Color.Red, new EventHandler(btnProceedForLoss_Click));
             instance = null;
             // Close();
+        }
+
+        private void lblEnemyChoice(String message)
+        {
+            Label lblEnemyChoice = new Label();
+            lblEnemyChoice.Text = message;
+            lblEnemyChoice.Size = new Size(150, 50);
+            lblEnemyChoice.Location = new Point(330, 50);
+            lblEnemyChoice.Font = new Font("Arial", 10, FontStyle.Bold);
+            lblEnemyChoice.ForeColor = Color.Black;
+            lblEnemyChoice.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(lblEnemyChoice);
+            lblEnemyChoice.BringToFront();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
@@ -229,13 +240,22 @@ namespace Fall2020_CSC403_Project
             String choice;
             uint num = (uint)rand.Next(0, 3);
             if (num == 0)
+            {
                 choice = "Rock";
+                lblEnemyChoice("Enemy chose rock");
+            }
             else if (num == 1)
+            {
                 choice = "Paper";
+                lblEnemyChoice("Enemy chose paper");
+            }
             else
+            {
                 choice = "Scissors";
+                lblEnemyChoice("Enemy chose scissors");
+            }
 
-            return choice; //0,1,2
+            return choice; //rock, paper, scissors
         }
 
         private void btnRock_Click(object sender, EventArgs e)
